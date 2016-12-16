@@ -57,32 +57,21 @@ height: 'auto',
 
   
      </script>
-     <!--[if lt IE 8]>
-   <div style=' clear: both; text-align:center; position: relative;'>
-     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-       <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
-    </a>
-  </div>
-<![endif]-->
-     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
 
-    	<link  type="text/css" media="screen" href="css/ie.css">
-    <![endif]-->
      </head>
      <body>
 <!--==============================header=================================-->
 <header>
 <div class="container_12">
     <div class="grid_12">
-           <h1><a href="index.html"><img src="../images/logo.png" alt="Prospect best opportunity to succeed"></a> </h1>
+        <h1><a href="menu.php"><img src="../images/logo.png" alt="Prospect best opportunity to succeed"></a> </h1>
         <div class="menu_block">
                <nav>
-            <ul class="sf-menu">
-                   <li class="current"><a href="index.html">Home</a>  <ul>
+<ul class="sf-menu">
+                   <li class="current"><a href="menu.php">Home</a>  <ul>
                        <li><a href="#">Lorem ipsum</a></li>
                        
-                       <li><a href="#">Corporis </a>
+                       <li><a href="#">Corporis  </a>
                     <ul>
                            <li><a href="#">Ratione dicta</a></li>
                            <li><a href="#">Quaerat maiores</a></li>
@@ -92,18 +81,21 @@ height: 'auto',
                   <li><a href="#">Maiores ipsum</a></li>
 
                      </ul></li>
-                   <li><a href="index-1.html">About</a> </li>
-                   <li><a href="index-2.html">Services</a> </li>
-                   <li><a href="index-3.html">Projects</a> </li>
-                   <li><a href="index-4.html">Contacts</a> </li>
-                 </ul>
-          </nav>
+                   <li><a href="index-1.php">About</a> </li>
+                   <li><a href="index-2.php">Services</a> </li>
+                   <li><a href="index-3.php">Projects</a> </li>
+                   <li><a href="index-4.php">Contacts</a> </li>
+</ul>
+</nav>
                <div class="clear"></div>
              </div>
         
          </div>
   </div>
 </header>
+
+
+
 <div class="clear"></div>
 <div class="bg1">
 <div class="container_12">
@@ -225,7 +217,7 @@ Approach</h3><i class=" icon-user"></i><p>Folern aditaut onsequ untur magni dolo
       </div>
       <div class="grid_4 omega">
          <div class="box"><div class="maxheight1">
-          <img src="images/page1_img2.jpg" alt="">
+          <img src="../images/page1_img2.jpg" alt="">
           <div class="extra_wrapper"><p><strong>Ut wisi enim</strong></p>
              <a href="#">Ut wisi enim ad min ve niam, quis nostrudexerci tation ullam.</a>
           </div></div>
@@ -248,17 +240,7 @@ Approach</h3><i class=" icon-user"></i><p>Folern aditaut onsequ untur magni dolo
   </div>
 </div>
 <!--==============================footer=================================-->
-
-  <div class="container_12">
-    <div class="grid_12"><footer>
-      <div class="socials">
-      <a href="#">facebook</a> | 
-      <a href="#">twitter</a> | 
-      <a href="#">google+</a></div>
-      <div class="copy">lawyers bureau  &copy; 2013 | <a href="index-5.html">Privacy Policy</a> More  at <a rel="nofollow" href="http://www.templatemonster.com/category.php?category=0&type=1" target="_blank">TemplateMonster.com</a></div></footer>
-      
-    </div>
-  </div>
+<?php include 'footer.php'?>
 
 </body>
 </html>
