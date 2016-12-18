@@ -60,7 +60,7 @@
                                     <a href="index-2.php">Services</a> 
                                 </li>
                                 <li>
-                                    <a href="ComposerList.php">Projects</a> 
+                                    <a href="ComposerList.php">Liste des Compositeurs</a> 
                                 </li>
                                 <li>
                                     <a href="index-4.php">Contacts</a> 
