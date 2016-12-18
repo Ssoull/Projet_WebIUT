@@ -27,23 +27,49 @@
                     <div class="menu_block">
                         <nav>
                             <ul class="sf-menu">
-                                <li><a href="index.html">Home</a>  <ul>
-                                        <li><a href="#">Lorem ipsum</a></li>
-
-                                        <li><a href="#">Corporis </a>
+                                <li>
+                                    <a href="index.html">Home</a>  
+                                    <ul>
+                                        <li>
+                                            <a href="#">Lorem ipsum</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Corporis </a>
                                             <ul>
-                                                <li><a href="#">Ratione dicta</a></li>
-                                                <li><a href="#">Quaerat maiores</a></li>
-                                                <li><a href="#">Exercitationem</a></li>
+                                                <li>
+                                                    <a href="#">Ratione dicta</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Quaerat maiores</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Exercitationem</a>
+                                                </li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Maiores ipsum</a></li>
+                                        <li>
+                                            <a href="#">Maiores ipsum</a>
+                                        </li>
 
-                                    </ul></li>
-                                <li><a href="index-1.php">About</a> </li>
-                                <li><a href="index-2.php">Services</a> </li>
-                                <li><a href="index-3.php">Projects</a> </li>
-                                <li><a href="index-4.php">Contacts</a> </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="index-1.php">About</a> 
+                                </li>
+                                <li>
+                                    <a href="index-2.php">Services</a> 
+                                </li>
+                                <li>
+                                    <a href="ComposerList.php">Projects</a> 
+                                </li>
+                                <li>
+                                    <a href="index-4.php">Contacts</a> 
+                                </li>
+                                <li>
+                                    <form action="ComposerList.php" id="searchthis" method="post">
+                                        <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
+                                    </form>
+                                </li>
                             </ul>
                         </nav>
                         <div class="clear"></div>

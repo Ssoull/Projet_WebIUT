@@ -60,10 +60,15 @@
                                     <a href="index-2.php">Services</a> 
                                 </li>
                                 <li>
-                                    <a href="index-3.php">Projects</a> 
+                                    <a href="ComposerList.php">Projects</a> 
                                 </li>
                                 <li class="current">
                                     <a href="index-4.php">Contacts</a> 
+                                </li>
+                                <li>
+                                    <form action="ComposerList.php" id="searchthis" method="post">
+                                        <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
+                                    </form>
                                 </li>
                             </ul>
                         </nav>
@@ -135,7 +140,12 @@
                                 </span> 
                                 <span class="empty">*This field is required.</span> 
                             </label>
-                            <div class="btns"><a data-type="reset" class="btn">clear</a><a data-type="submit" class="btn">submit</a></div>
+                            <div class="clear"></div>
+                            <div class="btns">
+                                <a data-type="reset" class="btn">clear</a>
+                                <a data-type="submit" class="btn">submit</a>
+                                <div class="clear"></div>
+                            </div>
                         </fieldset>
                     </form>
                 </div>

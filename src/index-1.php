@@ -60,10 +60,15 @@
                                     <a href="index-2.php">Services</a> 
                                 </li>
                                 <li>
-                                    <a href="index-3.php">Projects</a> 
+                                    <a href="ComposerList.php">Projects</a> 
                                 </li>
                                 <li>
                                     <a href="index-4.php">Contacts</a> 
+                                </li>
+                                <li>
+                                    <form action="ComposerList.php" id="searchthis" method="post">
+                                        <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
+                                    </form>
                                 </li>
                             </ul>
                         </nav>
