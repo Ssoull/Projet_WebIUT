@@ -57,11 +57,12 @@
                                     <a href="index-1.php">About</a> 
                                 </li>
                                 <li>
-                                    <a href="index-2.php">Services</a> 
-                                </li>
-                                <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
                                 </li>
+                                <li>
+                                    <a href="AlbumList.php">Liste des Albums</a>
+                                </li>
+                                
                                 <li class="current">
                                     <a href="index-4.php">Contacts</a> 
                                 </li>

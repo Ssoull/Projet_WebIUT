@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Liste des Compisiteurs</title>
+        <title>Liste des Albums</title>
         <meta charset="utf-8">
         <meta name = "format-detection" content = "telephone=no" />
         <link rel="icon" href="../images/favicon.ico" >
@@ -16,8 +16,8 @@
         <script  src="../js/jquery.responsivemenu.js"></script>
         <script  src="../js/jquery.mobilemenu.js"></script>
         <script  src="../js/jquery.easing.1.3.js"></script>
-
     </head>
+    
     <body>
         <!--==============================header=================================-->
         <header>
@@ -28,7 +28,7 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li>
-                                    <a href="menu.php">Home</a> 
+                                    <a href="menu.php">Home</a>  
                                     <ul>
                                         <li>
                                             <a href="#">Lorem ipsum</a>
@@ -56,10 +56,10 @@
                                 <li>
                                     <a href="index-1.php">About</a> 
                                 </li>
-                                <li class="current">
+                                <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
                                 </li>
-                                <li>
+                                <li class="current">
                                     <a href="AlbumList.php">Liste des Albums</a>
                                 </li>
                                 
@@ -80,32 +80,38 @@
         <!--=======content================================-->
         <div class="content projects">
             <div class="container_12">
-                
                 <div class="grid_12">
                     <?php 
-                    if(isset($_POST['searchBar']))
+                    if(isset($_GET["Nom_Musicien"]))
                     {
-                        echo '<h3>Compositeur(s) commen&ccedil;ant par ' . $_POST['searchBar'] . " :</h3>\n"; 
+                        echo '<h3>Albums de ' . $_GET['Prenom_Musicien'] . ' ' . $_GET['Nom_Musicien'] . " :</h3>\n"; 
                     }
                     else 
                     {
-                        echo "<h3>Liste des compositeurs :</h3>\n";
+                        echo "<h3>Liste des albums :</h3>\n";
                     }
                     ?>
-                    
                 </div>
-
+                
                 <?php
                 include 'DatabaseConnexion.php';
                 
-                $statement = "Select Distinct Musicien.Code_Musicien, Prénom_Musicien, Nom_Musicien From Musicien "
-                        . "Join Composer On Musicien.Code_Musicien=Composer.Code_Musicien Where Nom_Musicien Like :nom Order By Nom_Musicien";
+                $statement = "Select Distinct Titre_Album, Album.Code_Album, Libellé_Abrégé From Musicien "
+                        . "Join Composer On Musicien.Code_Musicien=Composer.Code_Musicien "
+                        . "Join Oeuvre On Composer.Code_Oeuvre=Oeuvre.Code_Oeuvre "
+                        . "Join Composition_Oeuvre On Oeuvre.Code_Oeuvre=Composition_Oeuvre.Code_Oeuvre "
+                        . "Join Enregistrement On Composition_Oeuvre.Code_Composition=Enregistrement.Code_Composition "
+                        . "Join Composition_Disque On Enregistrement.Code_Morceau=Composition_Disque.Code_Morceau "
+                        . "Join Disque On Composition_Disque.Code_Disque=Disque.Code_Disque "
+                        . "Join Album On Disque.Code_Album=Album.Code_Album "
+                        . "Join Genre On Album.Code_Genre=Genre.Code_Genre "
+                        . "Where Nom_Musicien Like :nom Order By Titre_Album";
                 
                 $requete = $pdo->prepare($statement);
             
-                if(isset($_POST['searchBar']))
+                if(isset($_GET['Nom_Musicien']))
                 {
-                    $init = $_POST['searchBar'];
+                    $init = $_GET['Nom_Musicien'];
                 }
                 else
                 {
@@ -114,32 +120,24 @@
                 $requete->bindValue('nom', $init . '%', PDO::PARAM_STR);
                 $requete->execute();
                 
-                $requete->bindColumn(1, $Code_Musicien);
-                $requete->bindColumn(2, $Prenom_Musicien);
-                $requete->bindColumn(3, $Nom_Musicien);
+                $requete->bindColumn(1, $Titre_Album);
+                $requete->bindColumn(2, $Code_Album);
+                $requete->bindColumn(3, $Libelle_Abrege);
                 
                 $cpt = 0;
                 
-
                 while ($row = $requete->fetch(PDO::FETCH_BOUND))
                 {
 echo "\t\t\t\t<div class='grid_3'>\n";
                     echo "\t\t\t\t\t<div class='box'>\n";
                     echo "\t\t\t\t\t\t<div class='maxheight'>\n";
 
-                    if($Prenom_Musicien == NULL)
-                    {
-                    echo "\t\t\t\t\t\t\t<h3>" . $Nom_Musicien . "</h3>\n";
-                    }
-                    else
-                    {
-                    echo "\t\t\t\t\t\t\t<h3>" . $Prenom_Musicien . "<br>" . $Nom_Musicien . "</h3>\n";
-                    }
-
-                    echo "\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t<img width='100%' height='100%' alt='Image du Compositeur : " . $Nom_Musicien . "' src='DataBaseMusicienImageAccess.php?Code=" . $Code_Musicien . "'/>\n\t\t\t\t\t\t\t</p>\n";
+                    echo "\t\t\t\t\t\t\t<h3>" . $Titre_Album . "</h3>\n";
+                    echo "\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t<img width='100%' height='100%' alt='Image de la pochette : " . $Titre_Album . "' src='DataBaseAlbumCoverAccess.php?Code=" . $Code_Album . "'/>\n\t\t\t\t\t\t\t</p>\n";
+                    echo "\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tGenre : " . $Libelle_Abrege . "\n\t\t\t\t\t\t\t</p>\n";
                     echo "\t\t\t\t\t\t</div>\n";
                     echo "\t\t\t\t\t\t<div class='box2'>\n";
-                    echo "\t\t\t\t\t\t\t<a href='AlbumList.php?Nom_Musicien=" . $Nom_Musicien . "&amp;Prenom_Musicien=" . $Prenom_Musicien . "' class='btn'>Album</a>\n";
+                    echo "\t\t\t\t\t\t\t<a href='MusicalWorkList.php?Titre_Album=" . $Titre_Album . "&amp;Code_Album=" . $Code_Album . "' class='btn'>Oeuvres</a>\n";
                     echo "\t\t\t\t\t\t</div>\n";
                     echo "\t\t\t\t\t</div>\n";
                     echo "\t\t\t\t</div>\n";
