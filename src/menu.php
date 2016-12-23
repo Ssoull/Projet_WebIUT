@@ -116,6 +116,7 @@
                                 <li>
                                     <a href="InscriptionSubscribers.php">S'inscrire</a> 
                                 </li>
+                                
                             </ul>
                         </nav>
                         <div class="clear">
