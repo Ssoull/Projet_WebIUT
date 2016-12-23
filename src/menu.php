@@ -260,7 +260,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="grid_4 omega">
                         <div class="box"><div class="maxheight1">
                                 <img src="../images/page1_img2.jpg" alt="">
