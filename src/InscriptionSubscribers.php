@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Liste des Compisiteurs</title>
+        <title>Contacts</title>
         <meta charset="utf-8">
         <meta name = "format-detection" content = "telephone=no" />
         <link rel="icon" href="../images/favicon.ico" >
         <link rel="shortcut icon" href="../images/favicon.ico"  />
         <link  rel="stylesheet" media="screen" href="../css/style.css">
         <link  rel="stylesheet" href="../css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="../css/form.css">
         <script src="../js/jquery.js"></script>
         <script src="../js/jquery-migrate-1.1.1.js"></script>
         <script src="../js/script.js"></script> 
         <script src="../js/jquery.equalheights.js"></script>
         <script src="../js/superfish.js"></script>
+        <script type="text/javascript" src="../js/forms.js"></script>
         <script  src="../js/jquery.responsivemenu.js"></script>
         <script  src="../js/jquery.mobilemenu.js"></script>
         <script  src="../js/jquery.easing.1.3.js"></script>
@@ -28,12 +30,11 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li>
-                                    <a href="menu.php">Home</a> 
+                                    <a href="menu.php">Home</a>  
                                     <ul>
                                         <li>
                                             <a href="#">Lorem ipsum</a>
                                         </li>
-
                                         <li>
                                             <a href="#">Corporis  </a>
                                             <ul>
@@ -51,31 +52,24 @@
                                         <li>
                                             <a href="#">Maiores ipsum</a>
                                         </li>
-                                    </ul>
-                                </li>
+                                    </ul></li>
                                 <li>
                                     <a href="index-1.php">About</a> 
                                 </li>
-                                <li class="current">
+                                <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
                                 </li>
                                 <li>
                                     <a href="AlbumList.php">Liste des Albums</a>
                                 </li>
                                 
-                                <li>
+                                <li class="current">
                                     <a href="index-4.php">Contacts</a> 
                                 </li>
                                 <li>
                                     <form action="ComposerList.php" id="searchthis" method="post">
                                         <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
                                     </form>
-                                </li>
-                                <li>
-                                    <a href="ComposerList.php">Connexion</a> 
-                                </li>
-                                <li>
-                                    <a href="InscriptionSubscribers.php">S'inscrire</a> 
                                 </li>
                             </ul>
                         </nav>
@@ -84,83 +78,54 @@
             </div>
         </header>
         <!--=======content================================-->
-        <div class="content projects">
+        
+        <div class="content">
             <div class="container_12">
-                
-                <div class="grid_12">
-                    <?php 
-                    if(isset($_POST['searchBar']))
-                    {
-                        echo '<h3>Compositeur(s) commen&ccedil;ant par ' . $_POST['searchBar'] . " :</h3>\n"; 
-                    }
-                    else 
-                    {
-                        echo "<h3>Liste des compositeurs :</h3>\n";
-                    }
-                    ?>
-                    
+                <div class="grid_7">
+                    <h3>Inscription</h3>
+                    <form id="form" method="post" action="menu.php">
+                        <div class="success_wrapper">
+                            <div class="success">Inscription effectu&eacute;e.<br>
+                                <strong>Bienvenue !</strong> 
+                            </div>
+                        </div>
+                        <fieldset>
+                            <label class="name">
+                                <input class="data" type="text" value="Nom :">
+                                <br class="clear">
+                                <!--<span class="empty error-empty">*This field is required.
+                                </span>-->
+                            </label>
+                            <label class="email">
+                                <input class="data" type="text" value="E-mail :">
+                                <br class="clear">
+                                <!--<span class="error error-empty">*This is not a valid email address.
+                                </span>
+                                <span class="empty error-empty">*This field is required.
+                                </span>-->
+                            </label>
+                            <label class="phone">
+                                <input class="data" type="tel" value="T&eacute;l&eacute;phone :">
+                                <br class="clear">
+                                <!--<span class="error error-empty">*This is not a valid phone number.</span>
+                                <span class="empty error-empty">*This field is required.
+                                </span>-->
+                            </label>
+                            <div class="clear"></div>
+                        </fieldset>
+                        <div class="btns">
+                            <a data-type="reset" class="btn">clear</a>
+                            <a data-type='submit' href='MusicalWorkList.php' class="btn">submit</a>
+                            <div class="clear"></div>
+                        </div>
+                        <input name="Connect" type="submit" value="Connecter" class="btn"/>
+                    </form>
                 </div>
-
-                <?php
-                include 'DatabaseConnexion.php';
-                
-                $statement = "Select Distinct Musicien.Code_Musicien, Prénom_Musicien, Nom_Musicien From Musicien "
-                        . "Join Composer On Musicien.Code_Musicien=Composer.Code_Musicien Where Nom_Musicien Like :nom Order By Nom_Musicien";
-                
-                $requete = $pdo->prepare($statement);
-            
-                if(isset($_POST['searchBar']))
-                {
-                    $init = $_POST['searchBar'];
-                }
-                else
-                {
-                    $init='';
-                }
-                $requete->bindValue('nom', $init . '%', PDO::PARAM_STR);
-                $requete->execute();
-                
-                $requete->bindColumn(1, $Code_Musicien);
-                $requete->bindColumn(2, $Prenom_Musicien);
-                $requete->bindColumn(3, $Nom_Musicien);
-                
-                $cpt = 0;
-                
-
-                while ($row = $requete->fetch(PDO::FETCH_BOUND))
-                {
-echo "\t\t\t\t<div class='grid_3'>\n";
-                    echo "\t\t\t\t\t<div class='box'>\n";
-                    echo "\t\t\t\t\t\t<div class='maxheight'>\n";
-
-                    if($Prenom_Musicien == NULL)
-                    {
-                    echo "\t\t\t\t\t\t\t<h3>" . $Nom_Musicien . "</h3>\n";
-                    }
-                    else
-                    {
-                    echo "\t\t\t\t\t\t\t<h3>" . $Prenom_Musicien . "<br>" . $Nom_Musicien . "</h3>\n";
-                    }
-
-                    echo "\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t<img width='100%' height='100%' alt='Image du Compositeur : " . $Nom_Musicien . "' src='DataBaseMusicienImageAccess.php?Code=" . $Code_Musicien . "'/>\n\t\t\t\t\t\t\t</p>\n";
-                    echo "\t\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t\t\t<div class='box2'>\n";
-                    echo "\t\t\t\t\t\t\t<a href='AlbumList.php?Nom_Musicien=" . $Nom_Musicien . "&amp;Prenom_Musicien=" . $Prenom_Musicien . "' class='btn'>Album</a>\n";
-                    echo "\t\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t</div>\n";
-                    
-                    $cpt++;
-                    
-                    if ($cpt == 4) {
-                        echo "\t\t\t\t<div class='clear cl2'></div>\n";
-                        $cpt = 0;
-                    }
-                     $pdo = null;
-                }
-                ?>
             </div>
         </div>
+        
+        
+        
         <!--==============================footer=================================-->
         <?php include 'footer.php'; ?>
 

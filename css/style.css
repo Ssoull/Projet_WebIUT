@@ -141,6 +141,22 @@ a.link-1:hover {
     color: inherit;
 }
 
+/* Input */
+input.btn {
+    color: #fff;
+    display: inline-block;
+    background: #322f2f;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 3px 24px 2px 23px;
+}
+
+input.btn:hover {
+    background-color: #41dcf3;
+    color: #fff;
+}
+
 /*preclass*/
 
 .mb0 {
@@ -510,15 +526,15 @@ footer a:hover {
     body {
         min-width:768px;
     }
-    .map figure, .map figure iframe, #form input, #form textarea, #form .success {
+    /*.map figure, .map figure iframe, #form input, #form textarea, #form .success {
         width: 100% !important;
-    }
-    #form .success {
+    }*/
+    /*#form .success {
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         -o-box-sizing: border-box;
         box-sizing: border-box;
-    }
+    }*/
     .map figure {
         height: auto !important;
     }

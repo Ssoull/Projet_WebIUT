@@ -71,6 +71,12 @@
                                         <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
                                     </form>
                                 </li>
+                                <li>
+                                    <a href="ComposerList.php">Connexion</a> 
+                                </li>
+                                <li>
+                                    <a href="InscriptionSubscribers.php">S'inscrire</a> 
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -149,6 +155,7 @@ echo "\t\t\t\t<div class='grid_3'>\n";
                         $cpt = 0;
                     }
                 }
+                $pdo = null;
                 ?>
             </div>
         </div>

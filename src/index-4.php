@@ -115,8 +115,6 @@
                             <label class="name">
                                 <input type="text" value="Name:">
                                 <br class="clear">
-                                <span class="error error-empty">*This is not a valid name.
-                                </span>
                                 <span class="empty error-empty">*This field is required.
                                 </span> 
                             </label>
