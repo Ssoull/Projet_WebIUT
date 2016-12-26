@@ -98,8 +98,7 @@
                     }
                     ?>
                 </div>
-                
-                <?php
+<?php
                 include 'DatabaseConnexion.php';
                 
                 $statement = "Select Distinct Titre_Album, Album.Code_Album, Libellé_Abrégé From Musicien "
@@ -134,7 +133,7 @@
                 
                 while ($row = $requete->fetch(PDO::FETCH_BOUND))
                 {
-echo "\t\t\t\t<div class='grid_3'>\n";
+                    echo "\t\t\t\t<div class='grid_3'>\n";
                     echo "\t\t\t\t\t<div class='box'>\n";
                     echo "\t\t\t\t\t\t<div class='maxheight'>\n";
 

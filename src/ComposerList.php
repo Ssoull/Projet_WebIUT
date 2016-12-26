@@ -86,7 +86,6 @@
         <!--=======content================================-->
         <div class="content projects">
             <div class="container_12">
-                
                 <div class="grid_12">
                     <?php 
                     if(isset($_POST['searchBar']))
@@ -98,10 +97,8 @@
                         echo "<h3>Liste des compositeurs :</h3>\n";
                     }
                     ?>
-                    
                 </div>
-
-                <?php
+<?php
                 include 'DatabaseConnexion.php';
                 
                 $statement = "Select Distinct Musicien.Code_Musicien, Prénom_Musicien, Nom_Musicien From Musicien "
@@ -129,7 +126,7 @@
 
                 while ($row = $requete->fetch(PDO::FETCH_BOUND))
                 {
-echo "\t\t\t\t<div class='grid_3'>\n";
+                    echo "\t\t\t\t<div class='grid_3'>\n";
                     echo "\t\t\t\t\t<div class='box'>\n";
                     echo "\t\t\t\t\t\t<div class='maxheight'>\n";
 

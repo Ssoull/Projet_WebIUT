@@ -17,7 +17,7 @@
 
 
 .car  {
-	padding-top: 65px;
+	padding-top: 45px;
 
 }
 
@@ -28,8 +28,6 @@
 .car h3 {
 	text-align: center;
 	border-top: 1px solid #d2d1d1;
-	padding-bottom: 6px;
-
 }
 .car h3 span {
 	display: inline-block;
