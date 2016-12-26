@@ -4,7 +4,7 @@
         <title>About</title>
         <meta charset="utf-8">
         <meta name = "format-detection" content = "telephone=no" />
-        <link rel="icon" href="../images/favicon.ico" >
+        <link rel="icon" href="../images/php.ico" >
         <link rel="shortcut icon" href="../images/favicon.ico"  />
         <link  rel="stylesheet" media="screen" href="../css/style.css">
         <link  rel="stylesheet" href="../css/font-awesome.css">
