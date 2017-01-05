@@ -128,6 +128,7 @@
                 <div class="grid_12">
                     <h3>Oeuvres contenus dans l'album, <br> <?php echo $_GET['Titre_Album']; ?></h3>
                 </div>
+                
 <?php
                 include 'DatabaseConnexion.php';
 
@@ -178,22 +179,26 @@
                 $client = new AmazonECS($Aws_ID, $Aws_SECRET, 'FR', $associateTag);
                 
                 $response = $client->responseGroup('Large')->lookup($Code_ASIN);
+                
+                
 
-                echo "\t\t\t\t<div class='grid_12'>\n";
-                echo "\t\t\t\t\t<div class='block1'>\n";
+                echo "\t\t\t\t<div class='grid_12'>\n"
+                    . "\t\t\t\t\t<div class='block1'>\n";
                 
                 if(isset($response->Items->Item->DetailPageURL))
                 {
-                    echo "\t\t\t\t\t\t<a href='". $response->Items->Item->DetailPageURL ."'><img width='30%' height='30%' class='img_inner fleft' alt=\"Image de l'album, " . $Titre_Album . "\" src='DataBaseAlbumCoverAccess.php?Code=" . $Code_Album . "'/></a>\n";
+                    echo "\t\t\t\t\t\t<a href='". $response->Items->Item->DetailPageURL ."' target='_blank'>\n"
+                            . "\t\t\t\t\t\t\t<img width='30%' height='30%' class='img_inner fleft' alt=\"Image de l'album, " . $Titre_Album . "\" src='DataBaseAlbumCoverAccess.php?Code=" . $Code_Album . "'/>\n"
+                            . "\t\t\t\t\t\t</a>\n";
                 }
                 else
                 {
                     echo "\t\t\t\t\t\t<img width='30%' height='30%' class='img_inner fleft' alt=\"Image de l'album, " . $Titre_Album . "\" src='DataBaseAlbumCoverAccess.php?Code=" . $Code_Album . "'/>\n";
                 }
                     
-                echo "\t\t\t\t\t\t<div class='extra_wrapper'>\n";
+                echo "\t\t\t\t\t\t<div class='extra_wrapper'>\n"
+                    . "\t\t\t\t\t\t\t<p class='p1'>Genre: " . $Genre . "</p>\n";
                 
-                echo "\t\t\t\t\t\t\t<p class='p1'>Genre: " . $Genre . "</p>\n";
                 if(!isset($Code_ASIN)) 
                 {
                     echo "\t\t\t\t\t\t\t<p class='p1'>&Eacute;diteur: " . $Editeur . "</p>\n";
@@ -264,61 +269,66 @@
                     echo "\t\t\t\t\t\t<p class='p1'> AUCUNE DONN&Eacute;ES AMAZON </p>\n";
                 }
                 
-                echo "\t\t\t\t\t\t</div>\n";   
-                echo "\t\t\t\t\t</div>\n";
-                echo "\t\t\t\t</div>\n";
+                echo "\t\t\t\t\t\t</div>\n"
+                    . "\t\t\t\t\t</div>\n"
+                    . "\t\t\t\t</div>\n"
+                    . "\t\t\t\t<div class='clear cl2'></div>\n";
                 
                 if(isset($Code_ASIN) && isset($response->Items->Item->SimilarProducts)) 
                 {
-                    echo "\t\t\t\t<div class='bg1'>\n";
-                    echo "\t\t\t\t\t<div class='container_12 car'>\n";
-                    echo "\t\t\t\t\t\t<div class='grid_12'>\n";
-                    echo "\t\t\t\t\t\t\t<h3>\n\t\t\t\t\t\t\t\t<span>Album(s) similaire</span>\n\t\t\t\t\t\t\t</h3>\n";
-                    echo "\t\t\t\t\t\t\t<div class='carousel_wrapper'>\n";
-                    echo "\t\t\t\t\t\t\t\t<a href='#' class='prev1'></a>\n\t\t\t\t\t\t\t\t<a href='#' class='next1'></a>\n";
-                    echo "\t\t\t\t\t\t\t\t<div>\n";
-                    echo "\t\t\t\t\t\t\t\t\t<ul class='carousel1'>\n";
+                    echo  "\t\t\t\t\t<div class='container_12 car'>\n"
+                        . "\t\t\t\t\t\t<div class='grid_12'>\n"
+                        . "\t\t\t\t\t\t\t<h3>\n"
+                        . "\t\t\t\t\t\t\t\t<span>Album(s) similaire</span>\n"
+                        . "\t\t\t\t\t\t\t</h3>\n"
+                        . "\t\t\t\t\t\t\t<div class='carousel_wrapper'>\n"
+                        . "\t\t\t\t\t\t\t\t<a href='#' class='prev1'></a>\n"
+                        . "\t\t\t\t\t\t\t\t<a href='#' class='next1'></a>\n"
+                        . "\t\t\t\t\t\t\t\t<div>\n"
+                        . "\t\t\t\t\t\t\t\t\t<ul class='carousel1'>\n";
                     
                     if(isset($response->Items->Item->SimilarProducts->SimilarProduct->Title))
                     {
-                        echo "\t\t\t\t\t\t\t\t\t\t<li>\n";
-                        echo "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $response->Items->Item->SimilarProducts->SimilarProduct->Title . "</em></p><br>\n";
-                        echo "\t\t\t\t\t\t\t\t\t\t</li>\n";
+                        echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
+                            . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $response->Items->Item->SimilarProducts->SimilarProduct->Title . "</em></p><br>\n"
+                            . "\t\t\t\t\t\t\t\t\t\t</li>\n";
                     }
                     else {
                         foreach($response->Items->Item->SimilarProducts->SimilarProduct as $Album_Similaire)
                         {
-                            echo "\t\t\t\t\t\t\t\t\t\t<li>\n";
-                            echo "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $Album_Similaire->Title . "</em></p><br>\n";
-                            echo "\t\t\t\t\t\t\t\t\t\t</li>\n";
+                            echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
+                                . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $Album_Similaire->Title . "</em></p><br>\n"
+                                . "\t\t\t\t\t\t\t\t\t\t</li>\n";
                         }    
                     }
                     
-                    echo "\t\t\t\t\t\t\t\t\t</ul>\n"; 
-                    echo "\t\t\t\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t</div>\n";
+                    echo "\t\t\t\t\t\t\t\t\t</ul>\n"
+                        . "\t\t\t\t\t\t\t\t</div>\n"
+                        . "\t\t\t\t\t\t\t</div>\n"
+                        . "\t\t\t\t\t\t</div>\n"
+                        . "\t\t\t\t\t</div>\n";
                 }
-                echo "\t\t\t\t<div class='clear cl2'></div>\n";
-                echo "\t\t\t\t<div class='grid_12'>\n";
+                
+                
+                echo "\t\t\t\t<div class='clear cl2'></div>\n"
+                    . "\t\t\t\t<div class='grid_12'>\n";
                 
                 $cpt = 0;
                 
                 foreach($Reponse_req_Code_Morceau as $Code_Morceau) {
 
-                    echo "\t\t\t\t\t<p>\n\t\t\t\t\t\t<audio src='DataBaseAudioAccess.php?Code=" . $Code_Morceau ."' controls>L'extrait du morceau suivant est introuvable : </audio> <br> ";
-                    
-                    echo $Reponse_req_Titre_Enregistrement[$cpt] . "\n\t\t\t\t\t</p>\n";
+                    echo "\t\t\t\t\t<p>\n"
+                        . "\t\t\t\t\t\t<audio src='DataBaseAudioAccess.php?Code=" . $Code_Morceau ."' controls>L'extrait du morceau suivant est introuvable : </audio> <br> "
+                        . $Reponse_req_Titre_Enregistrement[$cpt] . "\n"
+                        . "\t\t\t\t\t</p>\n";
                     
                     $cpt++;
                 }
                 
-                echo "\t\t\t\t</div>";
+                echo "\t\t\t\t</div>\n";
+                
                 $pdo = null;
                 ?>
-
             </div>
         </div>
         <!--==============================footer=================================-->

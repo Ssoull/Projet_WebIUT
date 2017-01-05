@@ -126,9 +126,9 @@
 
                 while ($row = $requete->fetch(PDO::FETCH_BOUND))
                 {
-                    echo "\t\t\t\t<div class='grid_3'>\n";
-                    echo "\t\t\t\t\t<div class='box'>\n";
-                    echo "\t\t\t\t\t\t<div class='maxheight'>\n";
+                    echo "\t\t\t\t<div class='grid_3'>\n"
+                        . "\t\t\t\t\t<div class='box'>\n"
+                        . "\t\t\t\t\t\t<div class='maxheight'>\n";
 
                     if($Prenom_Musicien == NULL)
                     {
@@ -139,13 +139,15 @@
                     echo "\t\t\t\t\t\t\t<h3>" . $Prenom_Musicien . "<br>" . $Nom_Musicien . "</h3>\n";
                     }
 
-                    echo "\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t<img width='100%' height='100%' alt='Image du Compositeur : " . $Nom_Musicien . "' src='DataBaseMusicienImageAccess.php?Code=" . $Code_Musicien . "'/>\n\t\t\t\t\t\t\t</p>\n";
-                    echo "\t\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t\t\t<div class='box2'>\n";
-                    echo "\t\t\t\t\t\t\t<a href='AlbumList.php?Nom_Musicien=" . $Nom_Musicien . "&amp;Prenom_Musicien=" . $Prenom_Musicien . "' class='btn'>Album</a>\n";
-                    echo "\t\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t</div>\n";
+                    echo "\t\t\t\t\t\t\t<p>\n"
+                        . "\t\t\t\t\t\t\t\t<img width='100%' height='100%' alt='Image du Compositeur : " . $Nom_Musicien . "' src='DataBaseMusicienImageAccess.php?Code=" . $Code_Musicien . "'/>\n"
+                        . "\t\t\t\t\t\t\t</p>\n"
+                        . "\t\t\t\t\t\t</div>\n"
+                        . "\t\t\t\t\t\t<div class='box2'>\n"
+                        . "\t\t\t\t\t\t\t<a href='AlbumList.php?Nom_Musicien=" . $Nom_Musicien . "&amp;Prenom_Musicien=" . $Prenom_Musicien . "' class='btn'>Album</a>\n"
+                        . "\t\t\t\t\t\t</div>\n"
+                        . "\t\t\t\t\t</div>\n"
+                        . "\t\t\t\t</div>\n";
                     
                     $cpt++;
                     

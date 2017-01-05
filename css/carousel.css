@@ -2,7 +2,7 @@
 .carousel_wrapper {
 	position: relative;
 	overflow: hidden;
-	padding: 0 30px;
+	padding: 20px 30px;
 }
 
 
@@ -17,8 +17,7 @@
 
 
 .car  {
-	padding-top: 45px;
-
+	padding-bottom: 45px;
 }
 
 .car>div {

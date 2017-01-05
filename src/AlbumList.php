@@ -133,19 +133,22 @@
                 
                 while ($row = $requete->fetch(PDO::FETCH_BOUND))
                 {
-                    echo "\t\t\t\t<div class='grid_3'>\n";
-                    echo "\t\t\t\t\t<div class='box'>\n";
-                    echo "\t\t\t\t\t\t<div class='maxheight'>\n";
-
-                    echo "\t\t\t\t\t\t\t<h3>" . $Titre_Album . "</h3>\n";
-                    echo "\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t<img width='100%' height='100%' alt='Image de la pochette : " . $Titre_Album . "' src='DataBaseAlbumCoverAccess.php?Code=" . $Code_Album . "'/>\n\t\t\t\t\t\t\t</p>\n";
-                    echo "\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tGenre : " . $Libelle_Abrege . "\n\t\t\t\t\t\t\t</p>\n";
-                    echo "\t\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t\t\t<div class='box2'>\n";
-                    echo "\t\t\t\t\t\t\t<a href='MusicalWorkList.php?Titre_Album=" . $Titre_Album . "&amp;Code_Album=" . $Code_Album . "' class='btn'>Oeuvres</a>\n";
-                    echo "\t\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t\t</div>\n";
-                    echo "\t\t\t\t</div>\n";
+                    echo "\t\t\t\t<div class='grid_3'>\n"
+                        . "\t\t\t\t\t<div class='box'>\n"
+                        . "\t\t\t\t\t\t<div class='maxheight'>\n"
+                        . "\t\t\t\t\t\t\t<h3>" . $Titre_Album . "</h3>\n"
+                        . "\t\t\t\t\t\t\t<p>\n"
+                        . "\t\t\t\t\t\t\t\t<img width='100%' height='100%' alt='Image de la pochette : " . $Titre_Album . "' src='DataBaseAlbumCoverAccess.php?Code=" . $Code_Album . "'/>\n"
+                        . "\t\t\t\t\t\t\t</p>\n"
+                        . "\t\t\t\t\t\t\t<p>\n"
+                        . "\t\t\t\t\t\t\t\tGenre : " . $Libelle_Abrege . "\n"
+                        . "\t\t\t\t\t\t\t</p>\n"
+                        . "\t\t\t\t\t\t</div>\n"
+                        . "\t\t\t\t\t\t<div class='box2\'>\n"
+                        . "\t\t\t\t\t\t\t<a href='MusicalWorkList.php?Titre_Album=" . $Titre_Album . "&amp;Code_Album=" . $Code_Album . "' class='btn'>Oeuvres</a>\n"
+                        . "\t\t\t\t\t\t</div>\n"
+                        . "\t\t\t\t\t</div>\n"
+                        . "\t\t\t\t</div>\n";
                     
                     $cpt++;
                     
