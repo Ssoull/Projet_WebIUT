@@ -67,42 +67,17 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li class="current">
-                                    <a href="menu.php">Home</a>  
-                                    <ul>
-                                        <li>
-                                            <a href="#">Lorem ipsum</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">Corporis  </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ratione dicta</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Quaerat maiores</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Exercitationem</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Maiores ipsum</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="index-1.php">About</a> 
-                                </li>
+                                    <a href="menu.php">Home</a>                              
+                                </li>                                
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
                                 </li>
                                 <li>
                                     <a href="AlbumList.php">Liste des Albums</a> 
                                 </li>
-                                
+                                <li>
+                                    <a href="index-1.php">A propos</a> 
+                                </li>
                                 <li>
                                     <a href="index-4.php">Contacts</a> 
                                 </li>
@@ -139,23 +114,17 @@
                             <div id="camera_wrap" class="">
                                 <div data-src="../images/slide.jpg">
                                     <div class="caption fadeIn">
-                                        <h2>We will help 
-                                            you to 
-                                            protect 
-                                            your rights! </h2>
+                                        <h2>Un superbe projet Web ! </h2>
                                     </div>
                                 </div>
                                 <div data-src="../images/slide1.jpg">
                                     <div class="caption fadeIn">
-                                        <h2>Applying  </h2>appropriate market
-                                        research solutions
+                                        <h2>En PHP</h2>
                                     </div>
                                 </div>
                                 <div data-src="../images/slide2.jpg">
                                     <div class="caption fadeIn">
-                                        <h2>Helping</h2>your business 
-                                        get back on its 
-                                        feet 
+                                        <h2>Sujet</h2> Réaliser un site web de type e-commerce
 
                                     </div>
                                 </div>
@@ -209,7 +178,7 @@
                     <h3>Notre projet</h3>
                     <div class="grid_4 alpha ">
                         <div class="box"><div class="maxheight1">
-                                <img src="../images/page1_img1.png" alt="">
+                                <img width="50%" src="../images/page1_img1.png" alt="">
                                 <div class="extra_wrapper"><p><strong>Un projet PHP</strong> </p>
                                     <a href="#">Ce projet à été réalisé en PHP</a>
                                 </div>
@@ -218,7 +187,7 @@
                     </div>
                     <div class="grid_4 omega">
                         <div class="box"><div class="maxheight1">
-                                <img src="../images/page1_img2.jpg" alt="">
+                                <img width="50%" src="../images/page1_img2.jpg" alt="">
                                 <div class="extra_wrapper"><p><strong>Binôme</strong></p>
                                     <a href="#">Ce projet à été réalisé par Anthony Nguyen Cong Trang et Pablo Gutierrez</a>
                                 </div>
@@ -229,7 +198,7 @@
                     
                     <div class="grid_4 omega">
                         <div class="box"><div class="maxheight1">
-                                <img src="../images/page1_img4.jpg" alt="">
+                                <img width="50%" src="../images/page1_img4.jpg" alt="">
                                 <div class="extra_wrapper"><p><strong>Principe</strong></p> 
                                     <a href="#">Il s'agit de construire un site web de type e-commerce s'appuyant sur la base de données de musique Classique_Web disponible sur le serveur info-simplet.  </a>
                                 </div>

@@ -20,49 +20,25 @@
     </head>
     <body>
         <!--==============================header=================================-->
-        <header>
+               <header>
             <div class="container_12">
                 <div class="grid_12">
                     <h1><a href="menu.php"><img src="../images/logo.png" alt="Prospect best opportunity to succeed"></a> </h1>
                     <div class="menu_block">
                         <nav>
                             <ul class="sf-menu">
-                                <li>
-                                    <a href="index.html">Home</a>  
-                                    <ul>
-                                        <li>
-                                            <a href="#">Lorem ipsum</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Corporis </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ratione dicta</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Quaerat maiores</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Exercitationem</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Maiores ipsum</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="index-1.php">About</a> 
-                                </li>
+                                <li class="current">
+                                    <a href="menu.php">Home</a>                              
+                                </li>                                
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
                                 </li>
                                 <li>
-                                    <a href="AlbumList.php">Liste des Albums</a>
+                                    <a href="AlbumList.php">Liste des Albums</a> 
                                 </li>
-                                
+                                <li>
+                                    <a href="index-1.php">A propos</a> 
+                                </li>
                                 <li>
                                     <a href="index-4.php">Contacts</a> 
                                 </li>
@@ -71,14 +47,23 @@
                                         <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
                                     </form>
                                 </li>
+                                <li>
+                                    <a href="ComposerList.php">Connexion</a> 
+                                </li>
+                                <li>
+                                    <a href="InscriptionSubscribers.php">S'inscrire</a> 
+                                </li>
+                                
                             </ul>
                         </nav>
-                        <div class="clear"></div>
+                        <div class="clear">
+                            
+                        </div>
                     </div>
-
                 </div>
             </div>
         </header>
+
         <!--=======content================================-->
         <div class="content">
             <div class="container_12">
