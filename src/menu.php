@@ -164,65 +164,25 @@
                 </div>
             </div>
 
-            <div class="page1_block">
-                <div class="container_12">
-                    <div class="grid_3">
-                        <div class="box ic1 "><div class="maxheight">
-                                <h3>Aenean nec eros
-                                    Vestibulum ant</h3><i class=" icon-briefcase"></i>
-                                <p>Masagni dolores eoquie voluptate msequi nesciunt. Nique porro quisquam est qui dolorem ipsumquia dolor sitamet consectet, adipisci unumquam eius.</p>
-                                <a href="#" class="btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid_3">
-                        <div class="box ic2"><div class="maxheight">
-                                <h3>Ultrices posuere 
-                                    cubilia Curae</h3><i class=" icon-umbrella"></i>
-                                <p>Adipisci velitsed quia non numqueius modi tempora inciduntut labore et doloreas magnam aliquam quaerat voluptatem. ut enim adima veniam, quis nostrum.</p>
-                                <a href="#" class="btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid_3">
-                        <div class="box ic3"><div class="maxheight">
-                                <h3>Suspendisse 
-                                    sollicitudin</h3><i class=" icon-home"></i>
-                                <p>Jerta baditaut onsequser untur magni dolores eoquie voluptate msequi nesciunt. Nique porro quisquam est qui dolorem ipsumquia dolor sitamet consectet.</p>
-                                <a href="#" class="btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid_3">
-                        <div class="box ic4"><div class="maxheight">
-                                <h3>Individual
-                                    Approach</h3><i class=" icon-user"></i>
-                                <p>Folern aditaut onsequ untur magni dolores eoquie voluptate msequi nesciunt. Nique porro quisquam est qui dolorem ipsumquia dolor sitamet consectet.</p>
-                                <a href="#" class="btn">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-            </div>
+   
             <div class="container_12 car">
                 <div class="grid_12">
-                    <h3><span>Testimonials</span></h3>
+                    <h3><span>Citations</span></h3>
                     <div class="carousel_wrapper">
                         <a href="#" class="prev1"></a><a href="#" class="next1"></a>
                         <div>
                             <ul class="carousel1">
                                 <li>
-                                    <p><em>Lorem ipsum dolor sit amet, con sectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</em></p>
-                                    <a href="#" class="btn">read more</a>
+                                    <p><em>"La musique savante manque à notre désir" Arthur Rimbaud</em></p>
+                                  
                                 </li>
                                 <li>
-                                    <p><em>Lorem ipsum dolor sit amet, con sectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</em></p>
-                                    <a href="#" class="btn">read more</a>
+                                    <p><em>"Le seul véritable commentaire d'un morceau de musique est un autre morceau de musique." Igor Stravinsky</em></p>
+                                  
                                 </li>
                                 <li>
-                                    <p><em>Lorem ipsum dolor sit amet, con sectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</em></p>
-                                    <a href="#" class="btn">read more</a>
+                                    <p><em>"La musique est une révélation plus haute que toute sagesse et toute philosophie." Ludwig Van Beethoven</em></p>
+                           
                                 </li>
                             </ul>
                         </div>
@@ -235,27 +195,23 @@
             <div class="container_12">
                 <div class="grid_4">
                     <div class="pad1">
-                        <h3>Capabilities</h3>
+                        <h3>Raccourcis</h3>
                         <ul class="list">
-                            <li><a href="#">Suspendisse sollicitudin velit</a></li>
-                            <li><a href="#">Ut pharetra augue nec augue</a></li>
-                            <li><a href="#">Nam elit agna,endrerit sit amet</a></li>
-                            <li><a href="#">Tincidunt ac, viverra sed, nulla</a></li>
-                            <li><a href="#">Donec porta diam eu massa</a></li>
-                            <li><a href="#">Quisque diam lorem</a></li>
-                            <li><a href="#">Interdum vitae,dapibus ac</a></li>
-                            <li><a href="#">Scelerisque vitae, pede</a></li>
-                            <li class="mb0"><a href="#">Donec eget tellus non erat</a></li>
+                            <li><a href="http://info-timide.iut.u-bordeaux.fr/perso/2017/anctrang/projet/Projet_WebIUT/src/ComposerList.php">Liste des compositeurs</a></li>
+                            <li><a href="http://info-timide.iut.u-bordeaux.fr/perso/2017/anctrang/projet/Projet_WebIUT/src/AlbumList.php">Liste des albums</a></li>
+                            <li><a href="http://info-timide.iut.u-bordeaux.fr/perso/2017/anctrang/projet/Projet_WebIUT/src/index-1.php">A propos de nous</a></li>
+                            <li><a href="http://info-timide.iut.u-bordeaux.fr/perso/2017/anctrang/projet/Projet_WebIUT/src/index-4.php">Contacts</a></li>
+                            
                         </ul>
                     </div>
                 </div>
                 <div class="grid_8 emp_box">
-                    <h3>Our Projects</h3>
+                    <h3>Notre projet</h3>
                     <div class="grid_4 alpha ">
                         <div class="box"><div class="maxheight1">
-                                <img src="../images/page1_img1.jpg" alt="">
-                                <div class="extra_wrapper"><p><strong>Nique porro</strong> </p>
-                                    <a href="#">Quisquam est qui dolorem ipsumquia  dolor adipisci eius unumquam.</a>
+                                <img src="../images/page1_img1.png" alt="">
+                                <div class="extra_wrapper"><p><strong>Un projet PHP</strong> </p>
+                                    <a href="#">Ce projet à été réalisé en PHP</a>
                                 </div>
                             </div>
                         </div>
@@ -263,28 +219,19 @@
                     <div class="grid_4 omega">
                         <div class="box"><div class="maxheight1">
                                 <img src="../images/page1_img2.jpg" alt="">
-                                <div class="extra_wrapper"><p><strong>Ut wisi enim</strong></p>
-                                    <a href="#">Ut wisi enim ad min ve niam, quis nostrudexerci tation ullam.</a>
+                                <div class="extra_wrapper"><p><strong>Binôme</strong></p>
+                                    <a href="#">Ce projet à été réalisé par Anthony Nguyen Cong Trang et Pablo Gutierrez</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="clear cl1"></div>
-                    <div class="grid_4 alpha">
-                        <div class="box"><div class="maxheight1">
-                                <img src="../images/page1_img3.jpg" alt="">
-                                <div class="extra_wrapper">
-                                    <p><strong>Duis autem</strong></p> 
-                                    <a href="#">Ullamcorper suscipit lobo rtis nisl t aliquip ex ea commodo conseqa adipisci.</a> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="grid_4 omega">
                         <div class="box"><div class="maxheight1">
                                 <img src="../images/page1_img4.jpg" alt="">
-                                <div class="extra_wrapper"><p><strong>Quis nostrud</strong></p> 
-                                    <a href="#">Sed diam non umy nibheuismod incidunt ut lao reet dolore magna. </a>
+                                <div class="extra_wrapper"><p><strong>Principe</strong></p> 
+                                    <a href="#">Il s'agit de construire un site web de type e-commerce s'appuyant sur la base de données de musique Classique_Web disponible sur le serveur info-simplet.  </a>
                                 </div>
                             </div>
                         </div>
