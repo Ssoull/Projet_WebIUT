@@ -289,16 +289,65 @@
                     
                     if(isset($response->Items->Item->SimilarProducts->SimilarProduct->Title))
                     {
-                        echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
-                            . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $response->Items->Item->SimilarProducts->SimilarProduct->Title . "</em></p><br>\n"
-                            . "\t\t\t\t\t\t\t\t\t\t</li>\n";
+                        $ASINAlbumSimilaire = $client->responseGroup('Large')->lookup($response->Items->Item->SimilarProducts->SimilarProduct->ASIN);
+                        
+                        /*if(isset($ASINAlbumSimilaire->Items->Item->DetailPageURL))
+                        {
+                                
+                            echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
+                                . "\t\t\t\t\t\t\t\t\t\t\t<a href='" . $ASINAlbumSimilaire->Items->Item->DetailPageURL . "' target='_blank'>\n"
+                                . "\t\t\t\t\t\t\t\t\t\t\t\t<img alt='Image de " . $Album_Similaire->Title . "' src='" . $ASINAlbumSimilaire->Items->Item->SmallImage->URL . "'/>\n"
+                                . "\t\t\t\t\t\t\t\t\t\t\t</a>\n";
+                            
+                            echo "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $Album_Similaire->Title;
+                            }
+                            else
+                            {*/
+                                echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
+                                //. "\t\t\t\t\t\t\t\t\t\t\t<img alt='Image de " . $response->Items->Item->SimilarProducts->SimilarProduct->Title . "' src='" . $ASINAlbumSimilaire->Items->Item->SmallImage->URL . "'/>\n"
+                                . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $response->Items->Item->SimilarProducts->SimilarProduct->Title;
+                        //}
+                        
+                        if(isset($ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice))
+                        {
+                            echo " <br> Prix: " . $ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice;
+                        }
+                        
+                        echo "</em></p><br>\n";
+                        
+                        echo "\t\t\t\t\t\t\t\t\t\t</li>\n";
+
                     }
                     else {
                         foreach($response->Items->Item->SimilarProducts->SimilarProduct as $Album_Similaire)
                         {
-                            echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
-                                . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $Album_Similaire->Title . "</em></p><br>\n"
-                                . "\t\t\t\t\t\t\t\t\t\t</li>\n";
+                            $ASINAlbumSimilaire = $client->responseGroup('Large')->lookup($Album_Similaire->ASIN);
+                            
+                            /*if(isset($ASINAlbumSimilaire->Items->Item->DetailPageURL))
+                            {
+                                
+                                echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
+                                    . "\t\t\t\t\t\t\t\t\t\t\t<a href='" . $ASINAlbumSimilaire->Items->Item->DetailPageURL . "' target='_blank'>\n"
+                                    . "\t\t\t\t\t\t\t\t\t\t\t\t<img alt='Image de " . $Album_Similaire->Title . "' src='" . $ASINAlbumSimilaire->Items->Item->SmallImage->URL . "'/>\n"
+                                    . "\t\t\t\t\t\t\t\t\t\t\t</a>\n";
+                            
+                            echo "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $Album_Similaire->Title;
+                            }
+                            else
+                            {*/
+                                echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
+                                    //. "\t\t\t\t\t\t\t\t\t\t\t<img alt='Image de " . $Album_Similaire->Title . "' src='" . $ASINAlbumSimilaire->Items->Item->SmallImage->URL . "'/>\n"
+                                    . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $Album_Similaire->Title;
+                            //}
+
+                            if(isset($ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice))
+                            {
+                                echo " <br> Prix: " . $ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice;
+                            }
+
+                            echo "</em></p><br>\n";
+                            
+                            echo "\t\t\t\t\t\t\t\t\t\t</li>\n";
                         }    
                     }
                     
