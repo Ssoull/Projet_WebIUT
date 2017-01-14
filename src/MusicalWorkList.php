@@ -178,8 +178,25 @@
                 $associateTag = trim($associateTag);
                 $client = new AmazonECS($Aws_ID, $Aws_SECRET, 'FR', $associateTag);
                 
-                $response = $client->responseGroup('Large')->lookup($Code_ASIN);
-                
+                if(isset($Code_ASIN))
+                {
+                    $response = $client->responseGroup('Large')->lookup($Code_ASIN);
+                }
+                else
+                {
+                    $response = $client->category('Music')->search($Titre_Album);
+                    
+                    if(isset($response->Items->Item->ASIN))
+                    {
+                        $Code_ASIN = $response->Items->Item->ASIN;
+                    }
+                    else
+                    {
+                        $Code_ASIN = $response->Items->Item[0]->ASIN;
+                    }
+                        
+                    $response = $client->responseGroup('Large')->lookup($Code_ASIN);
+                }
                 
 
                 echo "\t\t\t\t<div class='grid_12'>\n"
