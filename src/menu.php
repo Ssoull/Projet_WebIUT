@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Menu</title>
+        <title>BMenu</title>
         <meta charset="utf-8">
         <meta name = "format-detection" content = "telephone=no" />
         <link rel="icon" href="../images/favicon.ico" >

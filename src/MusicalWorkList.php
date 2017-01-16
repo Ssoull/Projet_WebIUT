@@ -403,7 +403,7 @@
                     
                     if(isset($_SESSION['login']))
                     {
-                        echo "\t\t\t\t\t\t<a class='shop_btn' href='AddToCart.php?CodeAlbum=" . $Code_Album . "&CodeMorceau=" . $Code_Morceau . "'> Ajouter au Panier </a>";
+                        echo "\t\t\t\t\t\t<a class='shop_btn' href='AddToCart.php?CodeAlbum=" . $Code_Album . "&amp;CodeMorceau=" . $Code_Morceau . "'> Ajouter au Panier </a>";
                     }
                     else
                     {

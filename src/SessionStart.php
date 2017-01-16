@@ -28,6 +28,8 @@ else if ($count >= 1)
     
     $_SESSION['login'] = $login;
     $_SESSION['pwd'] = $pwd;
+    $cart[0][0] = "";
+    $_SESSION["cart"] = $cart;
     
     header('Location: ' . $_COOKIE["LastURL"]);
 }
