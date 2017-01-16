@@ -7,9 +7,9 @@ $cart = $_SESSION["cart"];
 
 $found = false;
 
-echo 'coucou';
 
-if($cart[0][0] != "")
+
+if(strcmp($cart[0][0], "empty") != 0)
 {
     for($i = 0; $i < count($cart); $i++)
     {
@@ -22,8 +22,9 @@ if($cart[0][0] != "")
 
     if(!$found)
     {
-        $cart[count($cart)][0] = $Code_Album;
-        $cart[count($cart)][1] = $Code_Morceau;
+        $indice = count($cart);
+        $cart[$indice][0] = $Code_Album;
+        $cart[$indice][1] = $Code_Morceau;
     }
 }
 else
@@ -31,5 +32,8 @@ else
     $cart[0][0] = $Code_Album;
     $cart[0][1] = $Code_Morceau;
 }
+
+$_SESSION["cart"] = $cart;
+
 header('Location: ' . $_COOKIE["LastURL"]);
 ?>

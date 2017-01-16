@@ -28,7 +28,7 @@ else if ($count >= 1)
     
     $_SESSION['login'] = $login;
     $_SESSION['pwd'] = $pwd;
-    $cart[0][0] = "";
+    $cart[0][0] = "empty";
     $_SESSION["cart"] = $cart;
     
     header('Location: ' . $_COOKIE["LastURL"]);
