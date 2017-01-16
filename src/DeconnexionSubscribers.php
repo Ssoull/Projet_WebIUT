@@ -3,11 +3,11 @@ session_start();
 session_unset();
 session_destroy();
 
-unset($_COOKIE["login"]);
-unset($_COOKIE["password"]);
-unset($_COOKIE["name"]);
-unset($_COOKIE["password1"]);
-unset($_COOKIE["password2"]);
+setcookie("login", "", time()-1);
+setcookie("password", "", time()-1);
+setcookie("name", "", time()-1);
+setcookie("password1", "", time()-1);
+setcookie("password2", "", time()-1);
 
 header('Location: ' . $_COOKIE["LastURL"]);
 ?>

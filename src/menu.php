@@ -207,10 +207,10 @@
                     <div class="pad1">
                         <h3>Raccourcis</h3>
                         <ul class="list">
-                            <li><a href="http://info-timide.iut.u-bordeaux.fr/perso/2017/anctrang/projet/Projet_WebIUT/src/ComposerList.php">Liste des compositeurs</a></li>
-                            <li><a href="http://info-timide.iut.u-bordeaux.fr/perso/2017/anctrang/projet/Projet_WebIUT/src/AlbumList.php">Liste des albums</a></li>
-                            <li><a href="http://info-timide.iut.u-bordeaux.fr/perso/2017/anctrang/projet/Projet_WebIUT/src/index-1.php">A propos de nous</a></li>
-                            <li><a href="http://info-timide.iut.u-bordeaux.fr/perso/2017/anctrang/projet/Projet_WebIUT/src/index-4.php">Contacts</a></li>
+                            <li><a href="ComposerList.php">Liste des compositeurs</a></li>
+                            <li><a href="AlbumList.php">Liste des albums</a></li>
+                            <li><a href="AboutProject.php">&Agrave; propos de nous</a></li>
+                            <li><a href="index-4.php">Contacts</a></li>
                             
                         </ul>
                     </div>
