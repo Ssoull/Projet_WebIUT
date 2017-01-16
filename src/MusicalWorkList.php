@@ -1,3 +1,8 @@
+<?php 
+    session_start(); 
+    
+    setcookie("LastURL", "MusicalWorkList.php?Titre_Album=" . $_GET["Titre_Album"] . "&Code_Album=" . $_GET["Code_Album"]);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -93,29 +98,39 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="index-1.php">About</a> 
-                                </li>
-                                <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
                                 </li>
                                 <li class="current">
                                     <a href="AlbumList.php">Liste des Albums</a>
                                 </li>
-
                                 <li>
-                                    <a href="index-4.php">Contacts</a> 
+                                    <a href="AboutProject.php">&Agrave; propos</a> 
                                 </li>
                                 <li>
                                     <form action="ComposerList.php" id="searchthis" method="post">
                                         <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
                                     </form>
                                 </li>
-                                <li>
-                                    <a href="ComposerList.php">Connexion</a> 
-                                </li>
-                                <li>
-                                    <a href="InscriptionSubscribers.php">S'inscrire</a> 
-                                </li>
+<?php
+                                if(isset($_SESSION['login']))
+                                {
+                                    echo "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='SubscribersShopping.php'>Panier</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n"
+                                        . "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='DeconnexionSubscribers.php'>D&eacute;connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n";
+                                }
+                                else
+                                {
+                                    echo "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='ConnexionSubscribers.php'>Connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n"
+                                        . "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='InscriptionSubscribers.php'>S'inscrire</a>\n"
+                                        . "\t\t\t\t\t\t\t\t</li>\n";
+                                }
+                                ?>
                             </ul>
                         </nav>
                     </div>
@@ -384,8 +399,19 @@
                 foreach($Reponse_req_Code_Morceau as $Code_Morceau) {
 
                     echo "\t\t\t\t\t<p>\n"
-                        . "\t\t\t\t\t\t<audio src='DataBaseAudioAccess.php?Code=" . $Code_Morceau ."' controls>L'extrait du morceau suivant est introuvable : </audio> <br> "
-                        . $Reponse_req_Titre_Enregistrement[$cpt] . "\n"
+                        . "\t\t\t\t\t\t<audio class='audio' src='DataBaseAudioAccess.php?Code=" . $Code_Morceau ."' controls>L'extrait du morceau suivant est introuvable : </audio>\n";
+                    
+                    if(isset($_SESSION['login']))
+                    {
+                        echo "\t\t\t\t\t\t<a class='shop_btn' href='AddToCart.php?CodeAlbum=" . $Code_Album . "&CodeMorceau=" . $Code_Morceau . "'> Ajouter au Panier </a>";
+                    }
+                    else
+                    {
+                        session_unset();
+                        session_abort();
+                    }
+                    
+                    echo ' <br> ' . $Reponse_req_Titre_Enregistrement[$cpt] . "\n"
                         . "\t\t\t\t\t</p>\n";
                     
                     $cpt++;

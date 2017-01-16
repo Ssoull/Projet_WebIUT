@@ -1,7 +1,8 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Contacts</title>
+        <title>S'inscrire</title>
         <meta charset="utf-8">
         <meta name = "format-detection" content = "telephone=no" />
         <link rel="icon" href="../images/favicon.ico" >
@@ -52,9 +53,7 @@
                                         <li>
                                             <a href="#">Maiores ipsum</a>
                                         </li>
-                                    </ul></li>
-                                <li>
-                                    <a href="index-1.php">About</a> 
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
@@ -62,15 +61,38 @@
                                 <li>
                                     <a href="AlbumList.php">Liste des Albums</a>
                                 </li>
-                                
-                                <li class="current">
-                                    <a href="index-4.php">Contacts</a> 
+                                <li>
+                                    <a href="AboutProject.php">&Agrave; propos</a> 
                                 </li>
                                 <li>
                                     <form action="ComposerList.php" id="searchthis" method="post">
                                         <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
                                     </form>
                                 </li>
+<?php
+                                if(isset($_SESSION['login']))
+                                {
+                                    echo "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='SubscribersShopping.php'>Panier</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n"
+                                        . "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='DeconnexionSubscribers.php'>D&eacute;connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n";
+                                }
+                                else
+                                {
+                                    echo "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='ConnexionSubscribers.php'>Connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n"
+                                        . "\t\t\t\t\t\t\t\t<li class='current'>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='InscriptionSubscribers.php'>S'inscrire</a>\n"
+                                        . "\t\t\t\t\t\t\t\t</li>\n";
+                                    
+                                    session_unset();
+
+                                    session_destroy();
+                                }
+                                ?>
                             </ul>
                         </nav>
                     </div>
@@ -78,56 +100,105 @@
             </div>
         </header>
         <!--=======content================================-->
+        <?php
         
+        $name = '';
+        $login = '';
+        
+        if(isset($_COOKIE["name"]))
+        {
+            $name = $_COOKIE["name"];
+        }
+        
+        if(isset($_COOKIE["login"]))
+        {
+            $login = $_COOKIE["login"];
+        }
+        
+        $erreur = 10;
+
+        if (isset($_GET['erreur'])) {
+            $erreur = $_GET['erreur'];
+        }
+        ?>
         <div class="content">
             <div class="container_12">
                 <div class="grid_7">
                     <h3>Inscription</h3>
-                    <form id="form" method="post" action="menu.php">
-                        <div class="success_wrapper">
-                            <div class="success">Inscription effectu&eacute;e.<br>
-                                <strong>Bienvenue !</strong> 
-                            </div>
-                        </div>
-                        <fieldset>
-                            <label class="name">
-                                <input class="data" type="text" value="Nom :">
-                                <br class="clear">
-                                <!--<span class="empty error-empty">*This field is required.
-                                </span>-->
-                            </label>
-                            <label class="email">
-                                <input class="data" type="text" value="E-mail :">
-                                <br class="clear">
-                                <!--<span class="error error-empty">*This is not a valid email address.
-                                </span>
-                                <span class="empty error-empty">*This field is required.
-                                </span>-->
-                            </label>
-                            <label class="phone">
-                                <input class="data" type="tel" value="T&eacute;l&eacute;phone :">
-                                <br class="clear">
-                                <!--<span class="error error-empty">*This is not a valid phone number.</span>
-                                <span class="empty error-empty">*This field is required.
-                                </span>-->
-                            </label>
-                            <div class="clear"></div>
-                        </fieldset>
-                        <div class="btns">
-                            <a data-type="reset" class="btn">clear</a>
-                            <a data-type='submit' href='MusicalWorkList.php' class="btn">submit</a>
-                            <div class="clear"></div>
-                        </div>
-                        <input name="Connect" type="submit" value="Connecter" class="btn"/>
+                    <form method="post" action="SetCookiesInscription.php">
+                        <label>
+<?php
+                            if ($erreur == 0) {
+                                echo "\t\t\t\t\t\t\t<p style='color:red'>\n"
+                                . "\t\t\t\t\t\t\t\tNom obligatoire.\n"
+                                . "\t\t\t\t\t\t\t</p>\n";
+                            } else if ($erreur == 1) {
+                                echo "\t\t\t\t\t\t\t<p style='color:red'>\n"
+                                . "\t\t\t\t\t\t\t\tLe nom est trop long.\n"
+                                . "\t\t\t\t\t\t\t</p>\n";
+                            }
+                            ?>
+                            <p>
+                                Nom : <input class="data" name='name' type="text" value="<?php echo $name; ?>">
+                            </p>
+                        </label>
+                        <label>
+<?php
+                            if ($erreur == 2) {
+                                echo "\t\t\t\t\t\t\t<p style='color:red'>\n"
+                                . "\t\t\t\t\t\t\t\tCet identifiant est déjà pris.\n"
+                                . "\t\t\t\t\t\t\t</p>\n";
+                            } else if ($erreur == 3) {
+                                echo "\t\t\t\t\t\t\t<p style='color:red'>\n"
+                                . "\t\t\t\t\t\t\t\tIdentifiant obligatoire.\n"
+                                . "\t\t\t\t\t\t\t</p>\n";
+                            } else if ($erreur == 5) {
+                                echo "\t\t\t\t\t\t\t<p style='color:red'>\n"
+                                . "\t\t\t\t\t\t\t\tL'identifiant choisi est trop long.\n"
+                                . "\t\t\t\t\t\t\t</p>\n";
+                            }
+                            ?>
+                            <p>
+                                Identifiant : <input class="data" name='login' type="text" value="<?php echo $login; ?>">
+                            </p>
+                            <br class="clear">
+                        </label>
+                        <label>
+<?php
+                            if ($erreur == 4) {
+                                echo "\t\t\t\t\t\t\t<p style='color:red'>\n"
+                                . "\t\t\t\t\t\t\t\tRentrer un mot de passe.\n"
+                                . "\t\t\t\t\t\t\t</p>\n";
+                            } else if ($erreur == 6) {
+                                echo "\t\t\t\t\t\t<p style='color:red'> "
+                                . "\t\t\t\t\t\t\t\tLe choisi mot de passe est trop long.\n"
+                                . "\t\t\t\t\t\t\t</p>\n";
+                            } else if ($erreur == 7) {
+                                echo "\t\t\t\t\t\t\t<p style='color:red'>\n"
+                                . "\t\t\t\t\t\t\t\tLes deux mots de passe ne sont pas identiques.\n"
+                                . "\t\t\t\t\t\t\t</p>\n";
+                            }
+                            ?>
+                            <p>
+                                Mot de passe : <input class="data" name="password1" type="password">
+                            </p>
+                            <br class="clear">
+                        </label>
+                        <label>
+                            <p>
+                                Confirmer le mot de passe : <input class="data" name="password2" type="password">
+                            </p>
+                            <br class="clear">
+                        </label>
+                        <div class="clear"></div>
+
+                        <input name="Inscription" type="submit" value="S'inscrire" class="btn"/>
                     </form>
                 </div>
             </div>
         </div>
-        
-        
-        
         <!--==============================footer=================================-->
-        <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
 
     </body>
 </html>

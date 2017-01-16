@@ -1,3 +1,9 @@
+<?php 
+
+    session_start(); 
+    
+    setcookie("LastURL", "AboutProject.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,7 +33,7 @@
                     <div class="menu_block">
                         <nav>
                             <ul class="sf-menu">
-                                <li class="current">
+                                <li>
                                     <a href="menu.php">Home</a>                              
                                 </li>                                
                                 <li>
@@ -36,24 +42,38 @@
                                 <li>
                                     <a href="AlbumList.php">Liste des Albums</a> 
                                 </li>
-                                <li>
-                                    <a href="index-1.php">A propos</a> 
-                                </li>
-                                <li>
-                                    <a href="index-4.php">Contacts</a> 
+                                <li class="current">
+                                    <a href="AboutProject.php">&Agrave; propos</a> 
                                 </li>
                                 <li>
                                     <form action="ComposerList.php" id="searchthis" method="post">
                                         <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
                                     </form>
                                 </li>
-                                <li>
-                                    <a href="ComposerList.php">Connexion</a> 
-                                </li>
-                                <li>
-                                    <a href="InscriptionSubscribers.php">S'inscrire</a> 
-                                </li>
-                                
+<?php
+                                if(isset($_SESSION['login']))
+                                {
+                                    echo "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='SubscribersShopping.php'>Panier</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n"
+                                        . "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='DeconnexionSubscribers.php'>D&eacute;connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n";
+                                }
+                                else
+                                {
+                                    echo "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='ConnexionSubscribers.php'>Connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n"
+                                        . "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='InscriptionSubscribers.php'>S'inscrire</a>\n"
+                                        . "\t\t\t\t\t\t\t\t</li>\n";
+                                    
+                                    session_unset();
+
+                                    session_destroy();
+                                }
+                                ?>
                             </ul>
                         </nav>
                         <div class="clear">

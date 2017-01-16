@@ -29,6 +29,7 @@ embed {
     vertical-align:top;
 }
 
-input[type=text], textarea{ 
-    outline:none;border-radius:0;
+textarea{ 
+    outline:none;
+    border-radius:0;
 }

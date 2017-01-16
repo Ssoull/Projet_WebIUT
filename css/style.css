@@ -37,8 +37,9 @@ h1, h2, h3, h4, h5, h6 {
     color: #525252;
 }
 
-input {
-    /*éborder-radius: none !important;*/
+#search {
+    width: 196px;
+    margin-right: 50px;
 }
 
 p {
@@ -123,13 +124,15 @@ a.btn {
     padding: 3px 24px 2px 23px;
 }
 
-a.btn:hover {
-    background-color: #41dcf3;
+a.shop_btn {
     color: #fff;
-}
-
-a:hover {
-    color: #41dcf3;
+    display: inline-block;
+    background: #322f2f;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 24px;
+    padding: 3px 24px 2px 23px;
+    margin-left: 455px;
 }
 
 
@@ -150,6 +153,7 @@ input.btn {
     font-size: 13px;
     line-height: 24px;
     padding: 3px 24px 2px 23px;
+    border: none;
 }
 
 input.btn:hover {
@@ -333,7 +337,7 @@ header h1 a img {
     color: #fff;
 }
 
-.box:hover a.btn {
+.box:hover {
     background-color: #41dcf3;
 }
 
@@ -413,7 +417,7 @@ header h1 a img {
     background-color: #41dcf3 !important;
 }
 
-.projects .box:hover a.btn {
+.projects .box:hover a.btn a.shop_btn {
     background-color: #322f2f !important;
 }
 
@@ -520,6 +524,15 @@ footer a:hover {
     text-decoration: underline;
 }
 
+[type="search"] {
+   -webkit-appearance: textfield;
+   -webkit-box-sizing: content-box;
+}
+
+
+.audio .btn {
+    margin-left: 455px;
+}
 
 /*==================================RESPONSIVE LAYOUTS===============================================*/
 @media only screen and (max-width: 995px) {

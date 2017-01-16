@@ -1,7 +1,12 @@
+<?php 
+    session_start(); 
+    
+    setcookie("LastURL", "menu.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Home</title>
+        <title>Menu</title>
         <meta charset="utf-8">
         <meta name = "format-detection" content = "telephone=no" />
         <link rel="icon" href="../images/favicon.ico" >
@@ -66,8 +71,30 @@
                     <div class="menu_block">
                         <nav>
                             <ul class="sf-menu">
-                                <li class="current">
-                                    <a href="menu.php">Home</a>                              
+                                <li>
+                                    <a class="current" href="menu.php">Home</a>  
+                                    <ul>
+                                        <li>
+                                            <a href="#">Lorem ipsum</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Corporis  </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="#">Ratione dicta</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Quaerat maiores</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Exercitationem</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Maiores ipsum</a>
+                                        </li>
+                                    </ul>
                                 </li>                                
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
@@ -76,23 +103,37 @@
                                     <a href="AlbumList.php">Liste des Albums</a> 
                                 </li>
                                 <li>
-                                    <a href="index-1.php">A propos</a> 
-                                </li>
-                                <li>
-                                    <a href="index-4.php">Contacts</a> 
+                                    <a href="AboutProject.php">&Agrave; propos</a> 
                                 </li>
                                 <li>
                                     <form action="ComposerList.php" id="searchthis" method="post">
-                                        <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
+                                        <input id="search" name="searchBar" type="search" placeholder="Compositeurs"/>
                                     </form>
                                 </li>
-                                <li>
-                                    <a href="ComposerList.php">Connexion</a> 
-                                </li>
-                                <li>
-                                    <a href="InscriptionSubscribers.php">S'inscrire</a> 
-                                </li>
-                                
+<?php
+                                if(isset($_SESSION['login']))
+                                {
+                                    echo "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='SubscribersShopping.php'>Panier</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n"
+                                        . "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='DeconnexionSubscribers.php'>D&eacute;connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n";
+                                }
+                                else
+                                {
+                                    echo "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='ConnexionSubscribers.php'>Connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t</li>\n"
+                                        . "\t\t\t\t\t\t\t\t<li>\n"
+                                        . "\t\t\t\t\t\t\t\t\t<a href='InscriptionSubscribers.php'>S'inscrire</a>\n"
+                                        . "\t\t\t\t\t\t\t\t</li>\n";
+                                    
+                                    session_unset();
+
+                                    session_destroy();
+                                }
+                                ?>
                             </ul>
                         </nav>
                         <div class="clear">
