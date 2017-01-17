@@ -57,13 +57,13 @@
                                         . "\t\t\t\t\t\t\t\t\t<a href='SubscribersShopping.php'>Panier</a>\n "
                                         . "\t\t\t\t\t\t\t\t</li>\n"
                                         . "\t\t\t\t\t\t\t\t<li>\n"
-                                        . "\t\t\t\t\t\t\t\t\t<a href='DeconnexionSubscribers.php'>D&eacute;connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t\t<a href='DeconnexionSubscribers.php'>D&eacute;connexion</a>\n "
                                         . "\t\t\t\t\t\t\t\t</li>\n";
                                 }
                                 else
                                 {
                                     echo "\t\t\t\t\t\t\t\t<li>\n"
-                                        . "\t\t\t\t\t\t\t\t\t<a href='ConnexionSubscribers.php'>Connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t\t<a href='ConnexionSubscribers.php'>Connexion</a>\n "
                                         . "\t\t\t\t\t\t\t\t</li>\n"
                                         . "\t\t\t\t\t\t\t\t<li>\n"
                                         . "\t\t\t\t\t\t\t\t\t<a href='InscriptionSubscribers.php'>S'inscrire</a>\n"
@@ -90,17 +90,17 @@
                 <div class="grid_4">
                     <h3>About Us</h3>
                     <img src="../images/page2_img1.jpg" alt="" class="img_inner">
-                    Adipisci velitsed quia non numqueius modi tempora inciduntut labore et doloreas magnam aliquam quaerat voluptatem. ut enim adima veniam, quis nostrum.Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl. Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis.
+                    Dans le cadre de la programmation WEB du 3ème semestre de DUT informatique de BordeauxNous avons réalisé un site de e-commerce. Relié à la base de données Musique_web. Le site nous permet d'obtenir la liste des compositeurs présents dans la base de données, de leurs albums et également de leurs oeuvres. Suite à cela, il est possible, grâce à une API Amazon, de réaliser les achats des différents albums via un Panier(et ce uniquement aaprès connexion).
                 </div>
                 <div class="grid_8 emp_box">
-                    <h3>Our Staff</h3>
+                    <h3>Notre équipe</h3>
 
                     <div class="grid_4 alpha ">
                         <div class="box"><div class="maxheight1">
                                 <img src="../images/page2_img2.jpg" alt="">
                                 <div class="extra_wrapper">
-                                    <p><strong>Mark Johnson</strong> </p>
-                                    <a href="#">Quisquam est qui dolorem ipsumquia  dolor adipisci eius unumquam.</a>
+                                    <p><strong>Anthony Nguyen</strong> </p>
+                                    <a href="#">Anthony Nguyen est l'un des deux développeur de l'équipe, il à été subvervisé par son coéquipier.</a>
                                 </div></div>
                         </div>
                     </div>
@@ -109,30 +109,9 @@
                             <div class="maxheight1">
                                 <img src="../images/page2_img3.jpg" alt="">
                                 <div class="extra_wrapper">
-                                    <p><strong>Bradley Grosh</strong></p>
-                                    <a href="#">Ut wisi enim ad min ve niam, quis nostrudexerci tation ullam.</a>
+                                    <p><strong>Pablo Gutierrez</strong></p>
+                                    <a href="#">Pablo Gutierrez a rempli le rôle de chef de projet et également de développeur. Il a dirigé le projet et à partagé le travail entre lui-même et son coéquipier.</a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clear cl1"></div>
-                    <div class="grid_4 alpha">
-                        <div class="box">
-                            <div class="maxheight1">
-                                <img src="../images/page2_img4.jpg" alt="">
-                                <div class="extra_wrapper">
-                                    <p><strong>Patrick Pool</strong></p> 
-                                    <a href="#">Ullamcorper suscipit lobo rtis nisl t aliquip ex ea commodo conseqa adipisci.</a> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid_4 omega">
-                        <div class="box">
-                            <div class="maxheight1">
-                                <img src="../images/page2_img5.jpg" alt="">
-                                <div class="extra_wrapper">
-                                    <p><strong>Sam Kromstain</strong></p> 
-                                    <a href="#">Sed diam non umy nibheuismod incidunt ut lao reet dolore magna. </a></div>
                             </div>
                         </div>
                     </div>

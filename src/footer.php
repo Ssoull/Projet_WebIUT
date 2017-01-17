@@ -8,7 +8,7 @@
                     </div>
                     <div class="copy">
                         E-commerce Nguttierez | <a href="index-5.php">Privacy Policy</a>
-                        More  at <a rel="nofollow" href="#" target="_blank"> A propos</a>
+                        More  at <a rel="nofollow" href="http://info-timide.iut.u-bordeaux.fr/perso/2017/anctrang/Projet/projet_web/projet_webiut/src/AboutProject.php" target="_blank"> A propos</a>
                     </div>
                 </footer>
             </div>

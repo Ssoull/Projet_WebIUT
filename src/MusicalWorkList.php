@@ -118,13 +118,13 @@
                                         . "\t\t\t\t\t\t\t\t\t<a href='SubscribersShopping.php'>Panier</a>\n "
                                         . "\t\t\t\t\t\t\t\t</li>\n"
                                         . "\t\t\t\t\t\t\t\t<li>\n"
-                                        . "\t\t\t\t\t\t\t\t\t<a href='DeconnexionSubscribers.php'>D&eacute;connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t\t<a href='DeconnexionSubscribers.php'>D&eacute;connexion</a>\n "
                                         . "\t\t\t\t\t\t\t\t</li>\n";
                                 }
                                 else
                                 {
                                     echo "\t\t\t\t\t\t\t\t<li>\n"
-                                        . "\t\t\t\t\t\t\t\t\t<a href='ConnexionSubscribers.php'>Connection</a>\n "
+                                        . "\t\t\t\t\t\t\t\t\t<a href='ConnexionSubscribers.php'>Connexion</a>\n "
                                         . "\t\t\t\t\t\t\t\t</li>\n"
                                         . "\t\t\t\t\t\t\t\t<li>\n"
                                         . "\t\t\t\t\t\t\t\t\t<a href='InscriptionSubscribers.php'>S'inscrire</a>\n"
