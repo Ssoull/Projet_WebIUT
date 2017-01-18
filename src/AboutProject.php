@@ -120,27 +120,27 @@
                 <div class="clear"></div>
                 <div class="grid_12">
                     <div class="hor_separator hor2"></div>
-                    <h3 class="head1">Latest News</h3>
+                    <h3 class="head1">Dernières Nouvelles</h3>
                 </div>
                 <div class="grid_4">
                     <img src="../images/page2_img6.jpg" alt="" class="img_inner fleft">
                     <div class="extra_wrapper pad2">
-                        <time datetime="2013-01-01">12/23/2012</time><br>
-                        <strong><a href="#">Ullamcorper suscipit lobo rtis nisl t aliquip ex ea commodo conseqa</a></strong>
+                        <time datetime="2013-01-01">10/11/2016</time><br>
+                        <strong><a href="#">Début du projet</a></strong>
                     </div>
                 </div>
                 <div class="grid_4">
-                    <img src="../images/page2_img7.jpg" alt="" class="img_inner fleft">
+                    <img src="../images/page2_img7.png" alt="" class="img_inner fleft">
                     <div class="extra_wrapper pad2">
-                        <time datetime="2013-01-01">12/22/2012</time><br>
-                        <strong><a href="#">Fusce euismod consequat ante. Lorem ipsum dolor sit amet</a></strong>
+                        <time datetime="2013-01-01">16/01/2017</time><br>
+                        <strong><a href="#">Finition de la fonctionnalité "Panier"</a></strong>
                     </div>
                 </div>
                 <div class="grid_4">
-                    <img src="../images/page2_img8.jpg" alt="" class="img_inner fleft">
+                    <img src="../images/page2_img8.png" alt="" class="img_inner fleft">
                     <div class="extra_wrapper pad2">
-                        <time datetime="2013-01-01">12/21/2012</time><br>
-                        <strong><a href="#">Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis </a></strong>
+                        <time datetime="2013-01-01">21/07/2017</time><br>
+                        <strong><a href="#">Projet finalisé</a></strong>
                     </div>
                 </div>
                 <div class="clear"></div>
