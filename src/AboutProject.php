@@ -93,7 +93,7 @@
                         <div class="box"><div class="maxheight1">
                                 <img src="../images/page2_img1.jpg" alt="" class="img_inner">
                                 <div class="extra_wrapper">                                    
-                                    <a href="#"> Dans le cadre de la programmation WEB du 3ème semestre de DUT informatique de BordeauxNous avons réalisé un site de e-commerce. Relié à la base de données Musique_web. Le site nous permet d'obtenir la liste des compositeurs présents dans la base de données, de leurs albums et également de leurs oeuvres. Suite à cela, il est possible, grâce à une API Amazon, de réaliser les achats des différents albums via un Panier(et ce uniquement aaprès connexion).</a>
+                                    <p class="mashallah"> Dans le cadre de la programmation WEB du 3ème semestre de DUT informatique de BordeauxNous avons réalisé un site de e-commerce. Relié à la base de données Musique_web. Le site nous permet d'obtenir la liste des compositeurs présents dans la base de données, de leurs albums et également de leurs oeuvres. Suite à cela, il est possible, grâce à une API Amazon, de réaliser les achats des différents albums via un Panier(et ce uniquement aaprès connexion).</p>
                                 </div></div>
                         </div>
                     </div>                 
@@ -104,7 +104,7 @@
                                 <img src="../images/page2_img2.jpg" alt="">
                                 <div class="extra_wrapper">
                                     <p><strong>Anthony Nguyen</strong> </p>
-                                    <p class="mashallah">Anthony Nguyen est l'un des deux développeur de l'équipe, il à été subvervisé par son coéquipier.</a>
+                                    <p class="mashallah">Anthony Nguyen est l'un des deux développeur de l'équipe, il à été subvervisé par son coéquipier.</p>
                                 </div></div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                                 <img src="../images/page2_img3.jpg" alt="">
                                 <div class="extra_wrapper">
                                     <p><strong>Pablo Gutierrez</strong></p>
-                                    <a href="#">Pablo Gutierrez a rempli le rôle de chef de projet et également de développeur. Il a dirigé le projet et à partagé le travail entre lui-même et son coéquipier.</a>
+                                    <p class="mashallah">Pablo Gutierrez a rempli le rôle de chef de projet et également de développeur. Il a dirigé le projet et à partagé le travail entre lui-même et son coéquipier.</p>
                                 </div>
                             </div>
                         </div>
