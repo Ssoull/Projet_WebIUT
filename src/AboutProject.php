@@ -104,7 +104,7 @@
                                 <img src="../images/page2_img2.jpg" alt="">
                                 <div class="extra_wrapper">
                                     <p><strong>Anthony Nguyen</strong> </p>
-                                    <a href="#">Anthony Nguyen est l'un des deux développeur de l'équipe, il à été subvervisé par son coéquipier.</a>
+                                    <p class="mashallah">Anthony Nguyen est l'un des deux développeur de l'équipe, il à été subvervisé par son coéquipier.</a>
                                 </div></div>
                         </div>
                     </div>
