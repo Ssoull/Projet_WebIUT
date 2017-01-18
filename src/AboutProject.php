@@ -88,10 +88,20 @@
         <div class="content">
             <div class="container_12 ">
                 <div class="grid_4">
-                    <div class="grid_8 emp_box">
                     <h3>About Us</h3>
-                    <img src="../images/page2_img1.jpg" alt="" class="img_inner">
-                    Dans le cadre de la programmation WEB du 3ème semestre de DUT informatique de BordeauxNous avons réalisé un site de e-commerce. Relié à la base de données Musique_web. Le site nous permet d'obtenir la liste des compositeurs présents dans la base de données, de leurs albums et également de leurs oeuvres. Suite à cela, il est possible, grâce à une API Amazon, de réaliser les achats des différents albums via un Panier(et ce uniquement aaprès connexion).
+                    <div class="grid_4 alpha ">
+                        <div class="box"><div class="maxheight1">
+                                <img src="../images/page2_img1.jpg" alt="" class="img_inner">
+                                <div class="extra_wrapper">
+                                    
+                                    <a href="#"> Dans le cadre de la programmation WEB du 3ème semestre de DUT informatique de BordeauxNous avons réalisé un site de e-commerce. Relié à la base de données Musique_web. Le site nous permet d'obtenir la liste des compositeurs présents dans la base de données, de leurs albums et également de leurs oeuvres. Suite à cela, il est possible, grâce à une API Amazon, de réaliser les achats des différents albums via un Panier(et ce uniquement aaprès connexion).</a>
+                                </div></div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                   
                 </div>
                 
                     <h3>Notre équipe</h3>
