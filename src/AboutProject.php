@@ -98,7 +98,7 @@
                         </div>
                     </div>                 
                                
-                    <h3>Notre équipe</h3>
+                    
                     <div class="grid_4 alpha ">
                         <div class="box"><div class="maxheight1">
                                 <img src="../images/page2_img2.jpg" alt="">
