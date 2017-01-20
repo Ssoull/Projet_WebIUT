@@ -88,7 +88,22 @@
                         <div class="box"><div class="maxheight1">
                                 <img src="../images/page2_img1.jpg" alt="" class="img_inner">
                                 <div class="extra_wrapper">                                    
-                                    <p class="mashallah"> Dans le cadre de la programmation WEB du 3ème semestre de DUT informatique de BordeauxNous avons réalisé un site de e-commerce. Relié à la base de données Musique_web. Le site nous permet d'obtenir la liste des compositeurs présents dans la base de données, de leurs albums et également de leurs oeuvres. Suite à cela, il est possible, grâce à une API Amazon, de réaliser les achats des différents albums via un Panier(et ce uniquement aaprès connexion).</p>
+                                    <p class="mashallah"> Dans le cadre de la programmation WEB du 3ème semestre de DUT informatique de Bordeaux, nous avons réalisé un site de e-commerce. 
+                                        Relié à la base de données Classique_web. <br>
+                                        <strong> Liste des fonctionnalités </strong <br> 
+                                        - Connexion / Suivi de session <br>
+                                        - API Amazon <br>
+                                        - Panier <br>
+                                        - Recherche albums<br>
+                                        - Recherche compositeurs<br>
+                                   
+                                        <strong> Problèmes rencontrés </strong><br>
+                                        - Chargement de page lent à cause d'un fichier JS <br>
+                                        - Gestion du tableau pour l'API Amazon <br>
+                                        - Limite des albums similaires à 3 pour optimiser le chargement lent
+                                        
+                                        
+                                        </p>
                                 </div></div>
                         </div>
                     </div>                 

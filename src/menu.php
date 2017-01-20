@@ -67,8 +67,7 @@
         <header>
             <div class="container_12">
                 <div class="grid_12">
-                    <h1><a href="menu.php"><img src="../images/logo.png" alt="Prospect best opportunity to succeed"></a> </h1>
-                    <div class="menu_block">
+                    
                         <nav>
                             <ul class="sf-menu">
                                 <li>
