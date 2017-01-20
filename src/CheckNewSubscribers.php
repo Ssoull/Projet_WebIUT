@@ -18,7 +18,6 @@ $requete->bindValue('login', $login, PDO::PARAM_STR);
 $requete->execute();
 $requete->bindColumn(1, $count);
 $requete->fetch(PDO::FETCH_BOUND);
-echo $count;
 
 if (strlen($name) == 0) {
     header('Location: InscriptionSubscribers.php?erreur=0');

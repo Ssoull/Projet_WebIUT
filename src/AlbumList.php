@@ -40,29 +40,7 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li>
-                                    <a href="menu.php">Home</a>  
-                                    <ul>
-                                        <li>
-                                            <a href="#">Lorem ipsum</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Corporis  </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ratione dicta</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Quaerat maiores</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Exercitationem</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Maiores ipsum</a>
-                                        </li>
-                                    </ul>
+                                    <a href="menu.php">Menu</a>  
                                 </li>
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
@@ -74,8 +52,8 @@
                                     <a href="AboutProject.php">&Agrave; propos</a> 
                                 </li>
                                 <li>
-                                    <form action="ComposerList.php" id="searchthis" method="post">
-                                        <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
+                                    <form action="AlbumList.php" id="searchthis" method="post">
+                                        <input id="search" name="searchBar" type="text" placeholder="Albums"/>
                                     </form>
                                 </li>
 <?php
@@ -117,7 +95,11 @@
                     {
                         echo '<h3>Albums de ' . $_GET['Prenom_Musicien'] . ' ' . $_GET['Nom_Musicien'] . " :</h3>\n"; 
                     }
-                    else 
+                    else if(isset($_POST["searchBar"]))
+                    {
+                        echo "<h3>Liste des albums contenant '" . $_POST["searchBar"] . "':</h3>\n";
+                    }
+                    else
                     {
                         echo "<h3>Liste des albums :</h3>\n";
                     }
@@ -126,16 +108,32 @@
 <?php
                 include 'DatabaseConnexion.php';
                 
-                $statement = "Select Distinct Titre_Album, Album.Code_Album, Libellé_Abrégé From Musicien "
-                        . "Join Composer On Musicien.Code_Musicien=Composer.Code_Musicien "
-                        . "Join Oeuvre On Composer.Code_Oeuvre=Oeuvre.Code_Oeuvre "
-                        . "Join Composition_Oeuvre On Oeuvre.Code_Oeuvre=Composition_Oeuvre.Code_Oeuvre "
-                        . "Join Enregistrement On Composition_Oeuvre.Code_Composition=Enregistrement.Code_Composition "
-                        . "Join Composition_Disque On Enregistrement.Code_Morceau=Composition_Disque.Code_Morceau "
-                        . "Join Disque On Composition_Disque.Code_Disque=Disque.Code_Disque "
-                        . "Join Album On Disque.Code_Album=Album.Code_Album "
-                        . "Join Genre On Album.Code_Genre=Genre.Code_Genre "
-                        . "Where Nom_Musicien Like :nom Order By Titre_Album";
+                if(!isset($_POST['searchBar']))
+                { 
+                    $statement = "Select Distinct Titre_Album, Album.Code_Album, Libellé_Abrégé From Musicien "
+                            . "Join Composer On Musicien.Code_Musicien=Composer.Code_Musicien "
+                            . "Join Oeuvre On Composer.Code_Oeuvre=Oeuvre.Code_Oeuvre "
+                            . "Join Composition_Oeuvre On Oeuvre.Code_Oeuvre=Composition_Oeuvre.Code_Oeuvre "
+                            . "Join Enregistrement On Composition_Oeuvre.Code_Composition=Enregistrement.Code_Composition "
+                            . "Join Composition_Disque On Enregistrement.Code_Morceau=Composition_Disque.Code_Morceau "
+                            . "Join Disque On Composition_Disque.Code_Disque=Disque.Code_Disque "
+                            . "Join Album On Disque.Code_Album=Album.Code_Album "
+                            . "Join Genre On Album.Code_Genre=Genre.Code_Genre "
+                            . "Where Nom_Musicien Like :nom Order By Titre_Album";
+                }
+                else
+                {
+                    $statement = "Select Distinct Titre_Album, Album.Code_Album, Libellé_Abrégé From Musicien "
+                            . "Join Composer On Musicien.Code_Musicien=Composer.Code_Musicien "
+                            . "Join Oeuvre On Composer.Code_Oeuvre=Oeuvre.Code_Oeuvre "
+                            . "Join Composition_Oeuvre On Oeuvre.Code_Oeuvre=Composition_Oeuvre.Code_Oeuvre "
+                            . "Join Enregistrement On Composition_Oeuvre.Code_Composition=Enregistrement.Code_Composition "
+                            . "Join Composition_Disque On Enregistrement.Code_Morceau=Composition_Disque.Code_Morceau "
+                            . "Join Disque On Composition_Disque.Code_Disque=Disque.Code_Disque "
+                            . "Join Album On Disque.Code_Album=Album.Code_Album "
+                            . "Join Genre On Album.Code_Genre=Genre.Code_Genre "
+                            . "Where Titre_Album Like :nom Order By Titre_Album";
+                }
                 
                 $requete = $pdo->prepare($statement);
             
@@ -143,11 +141,16 @@
                 {
                     $init = $_GET['Nom_Musicien'];
                 }
+                else if(isset($_POST['searchBar']))
+                {
+                    $init = $_POST['searchBar'];
+                }
                 else
                 {
-                    $init='';
+                    $init = '';
                 }
-                $requete->bindValue('nom', $init . '%', PDO::PARAM_STR);
+                
+                $requete->bindValue('nom', '%' . $init . '%', PDO::PARAM_STR);
                 $requete->execute();
                 
                 $requete->bindColumn(1, $Titre_Album);

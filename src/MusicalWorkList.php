@@ -72,30 +72,7 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li>
-                                    <a href="menu.php">Home</a>  
-                                    <ul>
-                                        <li>
-                                            <a href="#">Lorem ipsum</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">Corporis  </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ratione dicta</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Quaerat maiores</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Exercitationem</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Maiores ipsum</a>
-                                        </li>
-                                    </ul>
+                                    <a href="menu.php">Menu</a> 
                                 </li>
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
@@ -105,11 +82,6 @@
                                 </li>
                                 <li>
                                     <a href="AboutProject.php">&Agrave; propos</a> 
-                                </li>
-                                <li>
-                                    <form action="ComposerList.php" id="searchthis" method="post">
-                                        <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
-                                    </form>
                                 </li>
 <?php
                                 if(isset($_SESSION['login']))
@@ -178,7 +150,7 @@
                     $Reponse_req_Code_Morceau[] = $Code_Morceau;
                     $Reponse_req_Titre_Enregistrement[] = $Titre_Enregistrement;
                 }
-                
+               
                 include '../AmazonAPI/rootKey.php';
                 $AmazonData = new SimpleXMLElement($xmlstr);
 
@@ -197,7 +169,8 @@
                 {
                     $response = $client->responseGroup('Large')->lookup($Code_ASIN);
                 }
-                else
+                
+                if(isset($response->Items->Request->Errors))
                 {
                     $response = $client->category('Music')->search($Titre_Album);
                     
@@ -323,22 +296,8 @@
                     {
                         $ASINAlbumSimilaire = $client->responseGroup('Large')->lookup($response->Items->Item->SimilarProducts->SimilarProduct->ASIN);
                         
-                        /*if(isset($ASINAlbumSimilaire->Items->Item->DetailPageURL))
-                        {
-                                
-                            echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
-                                . "\t\t\t\t\t\t\t\t\t\t\t<a href='" . $ASINAlbumSimilaire->Items->Item->DetailPageURL . "' target='_blank'>\n"
-                                . "\t\t\t\t\t\t\t\t\t\t\t\t<img alt='Image de " . $Album_Similaire->Title . "' src='" . $ASINAlbumSimilaire->Items->Item->SmallImage->URL . "'/>\n"
-                                . "\t\t\t\t\t\t\t\t\t\t\t</a>\n";
-                            
-                            echo "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $Album_Similaire->Title;
-                            }
-                            else
-                            {*/
-                                echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
-                                //. "\t\t\t\t\t\t\t\t\t\t\t<img alt='Image de " . $response->Items->Item->SimilarProducts->SimilarProduct->Title . "' src='" . $ASINAlbumSimilaire->Items->Item->SmallImage->URL . "'/>\n"
-                                . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $response->Items->Item->SimilarProducts->SimilarProduct->Title;
-                        //}
+                        echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
+                            . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $response->Items->Item->SimilarProducts->SimilarProduct->Title;
                         
                         if(isset($ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice))
                         {
@@ -351,36 +310,51 @@
 
                     }
                     else {
-                        foreach($response->Items->Item->SimilarProducts->SimilarProduct as $Album_Similaire)
+                        
+                        $cpt = count($response->Items->Item->SimilarProducts->SimilarProduct);
+                        
+                        if($cpt > 3)
                         {
-                            $ASINAlbumSimilaire = $client->responseGroup('Large')->lookup($Album_Similaire->ASIN);
-                            
-                            /*if(isset($ASINAlbumSimilaire->Items->Item->DetailPageURL))
+                            for($i = 0; $i < 3; $i++)
                             {
-                                
-                                echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
-                                    . "\t\t\t\t\t\t\t\t\t\t\t<a href='" . $ASINAlbumSimilaire->Items->Item->DetailPageURL . "' target='_blank'>\n"
-                                    . "\t\t\t\t\t\t\t\t\t\t\t\t<img alt='Image de " . $Album_Similaire->Title . "' src='" . $ASINAlbumSimilaire->Items->Item->SmallImage->URL . "'/>\n"
-                                    . "\t\t\t\t\t\t\t\t\t\t\t</a>\n";
+                                $ASINAlbumSimilaire = $client->responseGroup('Large')->lookup($response->Items->Item->SimilarProducts->SimilarProduct[$i]->ASIN);
                             
-                            echo "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $Album_Similaire->Title;
-                            }
-                            else
-                            {*/
                                 echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
-                                    //. "\t\t\t\t\t\t\t\t\t\t\t<img alt='Image de " . $Album_Similaire->Title . "' src='" . $ASINAlbumSimilaire->Items->Item->SmallImage->URL . "'/>\n"
+                                    . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $response->Items->Item->SimilarProducts->SimilarProduct[$i]->Title;
+
+                                if(isset($ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice))
+                                {
+                                    echo " <br> Prix: " . $ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice;
+                                }
+                                else
+                                {
+                                    echo " <br> Prix non r&eacute;f&eacuterenc&eacute;";
+                                }
+
+                                echo "</em></p><br>\n";
+
+                                echo "\t\t\t\t\t\t\t\t\t\t</li>\n";
+                            }
+                        }
+                        else
+                        {
+                            foreach($response->Items->Item->SimilarProducts->SimilarProduct as $Album_Similaire)
+                            {
+                                $ASINAlbumSimilaire = $client->responseGroup('Large')->lookup($Album_Similaire->ASIN);
+
+                                echo "\t\t\t\t\t\t\t\t\t\t<li>\n"
                                     . "\t\t\t\t\t\t\t\t\t\t\t<p><em>" . $Album_Similaire->Title;
-                            //}
 
-                            if(isset($ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice))
-                            {
-                                echo " <br> Prix: " . $ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice;
+                                if(isset($ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice))
+                                {
+                                    echo " <br> Prix: " . $ASINAlbumSimilaire->Items->Item->ItemAttributes->ListPrice->FormattedPrice;
+                                }
+
+                                echo "</em></p><br>\n";
+
+                                echo "\t\t\t\t\t\t\t\t\t\t</li>\n";
                             }
-
-                            echo "</em></p><br>\n";
-                            
-                            echo "\t\t\t\t\t\t\t\t\t\t</li>\n";
-                        }    
+                        }
                     }
                     
                     echo "\t\t\t\t\t\t\t\t\t</ul>\n"
@@ -403,7 +377,21 @@
                     
                     if(isset($_SESSION['login']))
                     {
-                        echo "\t\t\t\t\t\t<a class='shop_btn' href='AddToCart.php?CodeAlbum=" . $Code_Album . "&amp;CodeMorceau=" . $Code_Morceau . "'> Ajouter au Panier </a>";
+                        $quantityMusicalWork = $_SESSION["quantityMusicalWork"];
+                        
+                        $quantity = 0;
+                        $found = false;
+                        $i = 0;
+                        while($i < count($quantityMusicalWork) && !$found)
+                        {
+                            if($quantityMusicalWork[$i][0] == $Code_Morceau)
+                            {
+                                $quantity = $quantityMusicalWork[$i][1];
+                            }
+                            $i++;
+                        }
+                        
+                        echo "\t\t\t\t\t\t<a class='shop_btn' href='AddToCart.php?CodeAlbum=" . $Code_Album . "&amp;CodeMorceau=" . $Code_Morceau . "'> Ajouter au Panier (" . $quantity . ")</a>";
                     }
                     else
                     {

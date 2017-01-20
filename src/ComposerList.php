@@ -33,30 +33,7 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li>
-                                    <a href="menu.php">Home</a> 
-                                    <ul>
-                                        <li>
-                                            <a href="#">Lorem ipsum</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">Corporis  </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ratione dicta</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Quaerat maiores</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Exercitationem</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Maiores ipsum</a>
-                                        </li>
-                                    </ul>
+                                    <a href="menu.php">Menu</a> 
                                 </li>
                                 <li class="current">
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
@@ -121,7 +98,8 @@
                 include 'DatabaseConnexion.php';
                 
                 $statement = "Select Distinct Musicien.Code_Musicien, Prénom_Musicien, Nom_Musicien From Musicien "
-                        . "Join Composer On Musicien.Code_Musicien=Composer.Code_Musicien Where Nom_Musicien Like :nom Order By Nom_Musicien";
+                        . "Join Composer On Musicien.Code_Musicien=Composer.Code_Musicien "
+                        . "Where Nom_Musicien Like :nom OR Prénom_Musicien Like :prenom Order By Nom_Musicien";
                 
                 $requete = $pdo->prepare($statement);
             
@@ -134,6 +112,7 @@
                     $init='';
                 }
                 $requete->bindValue('nom', $init . '%', PDO::PARAM_STR);
+                $requete->bindValue('prenom', $init . '%', PDO::PARAM_STR);
                 $requete->execute();
                 
                 $requete->bindColumn(1, $Code_Musicien);

@@ -72,29 +72,7 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li>
-                                    <a class="current" href="menu.php">Home</a>  
-                                    <ul>
-                                        <li>
-                                            <a href="#">Lorem ipsum</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Corporis  </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ratione dicta</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Quaerat maiores</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Exercitationem</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Maiores ipsum</a>
-                                        </li>
-                                    </ul>
+                                    <a class="current" href="menu.php">Menu</a>  
                                 </li>                                
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
@@ -104,11 +82,6 @@
                                 </li>
                                 <li>
                                     <a href="AboutProject.php">&Agrave; propos</a> 
-                                </li>
-                                <li>
-                                    <form action="ComposerList.php" id="searchthis" method="post">
-                                        <input id="search" name="searchBar" type="search" placeholder="Compositeurs"/>
-                                    </form>
                                 </li>
 <?php
                                 if(isset($_SESSION['login']))

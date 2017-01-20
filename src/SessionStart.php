@@ -28,8 +28,12 @@ else if ($count >= 1)
     
     $_SESSION['login'] = $login;
     $_SESSION['pwd'] = $pwd;
+    
+    $quantityMusicalWork[0][0] = "empty";
     $cart[0][0] = "empty";
+    
     $_SESSION["cart"] = $cart;
+    $_SESSION["quantityMusicalWork"] = $quantityMusicalWork;
     
     header('Location: ' . $_COOKIE["LastURL"]);
 }

@@ -31,29 +31,7 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li>
-                                    <a href="menu.php">Home</a>  
-                                    <ul>
-                                        <li>
-                                            <a href="#">Lorem ipsum</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Corporis  </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ratione dicta</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Quaerat maiores</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Exercitationem</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Maiores ipsum</a>
-                                        </li>
-                                    </ul>
+                                    <a href="menu.php">Menu</a>  
                                 </li>
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
@@ -63,11 +41,6 @@
                                 </li>
                                 <li>
                                     <a href="AboutProject.php">&Agrave; propos</a> 
-                                </li>
-                                <li>
-                                    <form action="ComposerList.php" id="searchthis" method="post">
-                                        <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
-                                    </form>
                                 </li>
 <?php
                                 if(isset($_SESSION['login']))
@@ -117,7 +90,7 @@
         <div class="content">
             <div class="container_12">
                 <div class="grid_7">
-                    <h3>Inscription</h3>
+                    <h3>Connexion</h3>
                     <form method="post" action="SetCookiesConnection.php">
                         <label>
 <?php

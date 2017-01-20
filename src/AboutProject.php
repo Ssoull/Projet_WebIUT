@@ -34,7 +34,7 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li>
-                                    <a href="menu.php">Home</a>                              
+                                    <a href="menu.php">Menu</a>                              
                                 </li>                                
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
@@ -44,11 +44,6 @@
                                 </li>
                                 <li class="current">
                                     <a href="AboutProject.php">&Agrave; propos</a> 
-                                </li>
-                                <li>
-                                    <form action="ComposerList.php" id="searchthis" method="post">
-                                        <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
-                                    </form>
                                 </li>
 <?php
                                 if(isset($_SESSION['login']))

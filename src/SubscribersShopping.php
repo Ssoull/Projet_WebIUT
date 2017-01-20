@@ -1,7 +1,5 @@
 <?php 
     session_start(); 
-    
-    setcookie("LastURL", "Panier.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,30 +38,7 @@
                         <nav>
                             <ul class="sf-menu">
                                 <li>
-                                    <a href="menu.php">Home</a>  
-                                    <ul>
-                                        <li>
-                                            <a href="#">Lorem ipsum</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">Corporis  </a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Ratione dicta</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Quaerat maiores</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Exercitationem</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Maiores ipsum</a>
-                                        </li>
-                                    </ul>
+                                    <a href="menu.php">Menu</a>  
                                 </li>
                                 <li>
                                     <a href="ComposerList.php">Liste des Compositeurs</a> 
@@ -74,16 +49,11 @@
                                 <li>
                                     <a href="AboutProject.php">&Agrave; propos</a> 
                                 </li>
-                                <li>
-                                    <form action="ComposerList.php" id="searchthis" method="post">
-                                        <input id="search" name="searchBar" type="text" placeholder="Compositeurs"/>
-                                    </form>
-                                </li>
                                 <li class="current">
                                     <a href='SubscribersShopping.php'>Panier</a>
                                 </li>
                                 <li>
-                                    <a href='DeconnexionSubscribers.php'>D&eacute;connection</a>
+                                    <a href='DeconnexionSubscribers.php'>D&eacute;connexion</a>
                                  </li>
                             </ul>
                         </nav>
@@ -95,7 +65,7 @@
         <div class="content projects">
             <div class="container_12">
                 <div class="grid_12">
-                    <h3>Votre Panier :</h3>
+                    <h3>Votre Panier : <a href="HistoryBuy.php">(Voir son historique d'achat)</a></h3>
                 </div>
                 
 <?php
@@ -108,8 +78,11 @@
                         . "WHERE Album.Code_Album LIKE :code_album AND Enregistrement.Code_Morceau LIKE :code_morceau";
 
                 
-                
                 $cart = $_SESSION["cart"];
+                $quantityMusicalWork = $_SESSION["quantityMusicalWork"];
+                
+                var_dump($cart);
+                
                 if(strcmp($cart[0][0], "empty") != 0)
                 {
                     for($i = 0; $i < count($cart); $i++)
@@ -118,7 +91,7 @@
 
                         echo "\t\t\t\t<div class='clear cl2'></div>\n"
                                 . "\t\t\t\t<img width='30%' height='30%' class='cart' alt=\"Pochette d'un album\" src='DataBaseAlbumCoverAccess.php?Code=" . $Code_Album . "'/>\n";        
-
+                        
                         for($j = 1; $j < count($cart[$i]); $j++)
                         {
                             $requete = $pdo->prepare($statement);
@@ -132,12 +105,26 @@
 
                             $requete->bindColumn(1, $Titre_Album);
                             $requete->bindColumn(2, $Titre_Enregistrement);
+                            
+                            $u = 0;
+                            $found = false;
+                            $quantity = 0;
+                            while($u < count($quantityMusicalWork) && !$found)
+                            {
+                                if($quantityMusicalWork[$u][0] == $Code_Morceau)
+                                {
+                                    $quantity = $quantityMusicalWork[$u][1];
+                                    $found = true;
+                                }
+                                
+                                $u = $u + 1;
+                            }
 
                             $requete->fetch(PDO::FETCH_BOUND);
 
-
                             echo "\t\t\t\t<p class='cart'>\n"
-                                . "\t\t\t\t\tMorceau : " . $Titre_Enregistrement . "\n"
+                                . "\t\t\t\t\tMorceau : " . $Titre_Enregistrement . " <br>\n"
+                                . "\t\t\t\t\tQuantité : " . $quantity
                                 . "\t\t\t\t</p>\n";
                         }
                     }
@@ -151,6 +138,8 @@
                 
                 $pdo = null;
                 ?>
+                
+                <a class="btn" href="buyContentCart.php">Acheter le contenu du panier</a>
             </div>
         </div>
         <!--==============================footer=================================-->

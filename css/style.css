@@ -50,6 +50,9 @@ p.p1 {
     margin-bottom: 10px;
 }
 
+a.litteFont {
+    font-size: 9px;
+}
 
 address {
     font-style: normal;
@@ -132,7 +135,7 @@ a.shop_btn {
     font-size: 13px;
     line-height: 24px;
     padding: 3px 24px 2px 23px;
-    margin-left: 455px;
+    margin-left: 250px;
 }
 
 
@@ -546,7 +549,6 @@ img.cart {
 }
 
 p.cart {
-    text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
