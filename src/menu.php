@@ -193,7 +193,7 @@
                         <div class="box"><div class="maxheight1">
                                 <img width="50%" src="../images/page1_img1.png" alt="">
                                 <div class="extra_wrapper"><p><strong>Un projet PHP</strong> </p>
-                                    <a href="#">Ce projet à été réalisé en PHP</a>
+                                    <p class="mashallah">Ce projet à été réalisé en PHP</p>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@
                         <div class="box"><div class="maxheight1">
                                 <img width="50%" src="../images/page1_img2.jpg" alt="">
                                 <div class="extra_wrapper"><p><strong>Binôme</strong></p>
-                                    <a href="#">Ce projet à été réalisé par Anthony Nguyen Cong Trang et Pablo Gutierrez</a>
+                                    <p class="mashallah">Ce projet à été réalisé par Anthony Nguyen Cong Trang et Pablo Gutierrez</p>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +213,7 @@
                         <div class="box"><div class="maxheight1">
                                 <img width="50%" src="../images/page1_img4.jpg" alt="">
                                 <div class="extra_wrapper"><p><strong>Principe</strong></p> 
-                                    <a href="#">Il s'agit de construire un site web de type e-commerce s'appuyant sur la base de données de musique Classique_Web disponible sur le serveur info-simplet.  </a>
+                                    <p class=mashallah">Il s'agit de construire un site web de type e-commerce s'appuyant sur la base de données de musique Classique_Web disponible sur le serveur info-simplet.  </p>
                                 </div>
                             </div>
                         </div>
