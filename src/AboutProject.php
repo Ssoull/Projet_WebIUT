@@ -116,46 +116,13 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
-                <div class="grid_12">
-                    <div class="hor_separator hor2"></div>
-                    <h3 class="head1">Dernières Nouvelles</h3>
-                </div>
-                <div class="grid_4">
-                    <img src="../images/page2_img6.jpg" alt="" class="img_inner fleft">
-                    <div class="extra_wrapper pad2">
-                        <time datetime="2013-01-01">10/11/2016</time><br>
-                        <strong><a href="#">Début du projet</a></strong>
-                    </div>
-                </div>
-                <div class="grid_4">
-                    <img src="../images/page2_img7.png" alt="" class="img_inner fleft">
-                    <div class="extra_wrapper pad2">
-                        <time datetime="2013-01-01">16/01/2017</time><br>
-                        <strong><a href="#">Finition de la fonctionnalité "Panier"</a></strong>
-                    </div>
-                </div>
-                <div class="grid_4">
-                    <img src="../images/page2_img8.png" alt="" class="img_inner fleft">
-                    <div class="extra_wrapper pad2">
-                        <time datetime="2013-01-01">21/07/2017</time><br>
-                        <strong><a href="#">Projet finalisé</a></strong>
-                    </div>
-                </div>
+                
                 <div class="clear"></div>
                 <div class="grid_12">
                     <div class="hor_separator mb0 "></div>
                 </div>
                 <div class="clear"></div>
-                <div class="grid_12">
-                    <h3>Clients</h3>
-                    <ul class="logos">
-                        <li><a href="#"><img src="../images/log1.png" alt=""></a></li>
-                        <li><a href="#"><img src="../images/log2.png" alt=""></a></li>
-                        <li><a href="#"><img src="../images/log3.png" alt=""></a></li>
-                        <li><a href="#"><img src="../images/log4.png" alt=""></a></li>
-                    </ul>
-                </div>
+               
             </div>
         </div>
         <!--==============================footer=================================-->
