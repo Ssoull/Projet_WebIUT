@@ -114,7 +114,7 @@
                                 <img src="../images/page2_img2.jpg" alt="">
                                 <div class="extra_wrapper">
                                     <p><strong>Anthony Nguyen</strong> </p>
-                                    <p class="mashallah">Anthony Nguyen est l'un des deux développeur de l'équipe, il à été subvervisé par son coéquipier.</p>
+                                    <a class="mashallah" href="">Anthony Nguyen est l'un des deux développeur de l'équipe, il à été subvervisé par son coéquipier.</a>
                                 </div></div>
                         </div>
                     </div>
@@ -123,8 +123,8 @@
                             <div class="maxheight1">
                                 <img src="../images/page2_img3.jpg" alt="">
                                 <div class="extra_wrapper">
-                                    <a href="https://www.facebook.com/pablo.gutierrez.902604?fref=ts"><strong>Pablo Gutierrez</strong></a>
-                                    <p class="mashallah">Pablo Gutierrez a rempli le rôle de chef de projet et également de développeur. Il a dirigé le projet et à partagé le travail entre lui-même et son coéquipier.</p>
+                                    <p><strong>Pablo Gutierrez</strong></p>
+                                    <a class="mashallah" href="https://www.facebook.com/pablo.gutierrez.902604?fref=ts">Pablo Gutierrez a rempli le rôle de chef de projet et également de développeur. Il a dirigé le projet et à partagé le travail entre lui-même et son coéquipier.</a>
                                 </div>
                             </div>
                         </div>
