@@ -119,13 +119,20 @@
                                 
                                 $u = $u + 1;
                             }
-
+                            
+                            $u = $u - 1;
+                            
                             $requete->fetch(PDO::FETCH_BOUND);
 
                             echo "\t\t\t\t<p class='cart'>\n"
                                 . "\t\t\t\t\tMorceau : " . $Titre_Enregistrement . " <br>\n"
                                 . "\t\t\t\t\tQuantité : " . $quantity
                                 . "\t\t\t\t</p>\n";
+                            
+                            if ($quantity > 0) 
+                            {
+                                echo "\t\t\t\t<a href='SuppOneElementIntoCart.php?IndexQuantity=" . $u . "&amp;IndexCartI=" . $i . "&amp;IndexCartJ=" . $j . "'> Supprimer d'une quantit&eaute; </a>";
+                            }
                         }
                     }
                 }
