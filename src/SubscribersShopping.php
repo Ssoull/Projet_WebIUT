@@ -65,7 +65,7 @@
         <div class="content projects">
             <div class="container_12">
                 <div class="grid_12">
-                    <h3>Votre Panier : <a href="HistoryBuy.php">(Voir son historique d'achat)</a></h3>
+                    <h3>Votre Panier : <a class='litteFont' href="HistoryBuy.php">(Voir son historique d'achat)</a></h3>
                 </div>
                 
 <?php
